@@ -1,0 +1,20 @@
+.map {
+  width: 100vw;
+  height: 90vh;
+  background-color: #d4e4e4;
+}
+
+.map-slider {
+  background-color: #030d0f;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.map-slider > input[type=range] {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 6px;
+}
