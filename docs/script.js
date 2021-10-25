@@ -58,7 +58,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [IndexOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: .7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
