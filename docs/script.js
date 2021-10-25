@@ -65,8 +65,8 @@ function CenterControl2(controlDiv, map) {
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
-    map.setCenter({lat: 31.60731097762663, lng: -105.98259474086535});
-    map.setZoom(10);
+    map.setCenter({lat: 31.55731097762663, lng: -105.99259474086535});
+    map.setZoom(10.30);
   });
 }
 
@@ -251,6 +251,12 @@ var maxZoom =  15.0 ;
 
 
 //path to map tiles parent folder
+var S3LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S3LRDEMcontour\/';
+var S3LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S3LRDEMcolor\/';
+var S2LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMcontour\/';
+var S2LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMcolor\/';
+var S1LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcontour\/';
+var S1LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcolor\/';
 var S1HROverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/highresolution\/'; 
 var IndexOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/indextiles\/';
 var S1OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1\/';
@@ -265,6 +271,96 @@ var tileSuffix = '';
 
 
 //generate the tile urls and set up the overlay options
+var S3LRDEMcontour
+google.maps.ImageMapType({
+  getTileUrl: function(coord, zoom) {
+        if (zoom < minZoom || zoom > maxZoom) {
+          return null;
+        }
+        var numTiles = 1 << zoom;
+        var x = ((coord.x % numTiles) + numTiles) % numTiles;
+        return [S3LRDEMcontourOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      },
+  opacity: 0.7,
+  name: 'Rio Meander Map',
+  tileSize: new google.maps.Size(256, 256)
+  });
+
+var S3LRDEMcolor
+google.maps.ImageMapType({
+  getTileUrl: function(coord, zoom) {
+        if (zoom < minZoom || zoom > maxZoom) {
+          return null;
+        }
+        var numTiles = 1 << zoom;
+        var x = ((coord.x % numTiles) + numTiles) % numTiles;
+        return [S3LRDEMcolorOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      },
+  opacity: 0.7,
+  name: 'Rio Meander Map',
+  tileSize: new google.maps.Size(256, 256)
+  });
+
+var S2LRDEMcontour = new
+google.maps.ImageMapType({
+  getTileUrl: function(coord, zoom) {
+        if (zoom < minZoom || zoom > maxZoom) {
+          return null;
+        }
+        var numTiles = 1 << zoom;
+        var x = ((coord.x % numTiles) + numTiles) % numTiles;
+        return [S2LRDEMcontourOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      },
+  opacity: 0.7,
+  name: 'Rio Meander Map',
+  tileSize: new google.maps.Size(256, 256)
+  });
+
+var S2LRDEMcolor = new
+google.maps.ImageMapType({
+  getTileUrl: function(coord, zoom) {
+        if (zoom < minZoom || zoom > maxZoom) {
+          return null;
+        }
+        var numTiles = 1 << zoom;
+        var x = ((coord.x % numTiles) + numTiles) % numTiles;
+        return [S2LRDEMcolorOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      },
+  opacity: 0.7,
+  name: 'Rio Meander Map',
+  tileSize: new google.maps.Size(256, 256)
+  });
+
+var S1LRDEMcontour = new
+google.maps.ImageMapType({
+  getTileUrl: function(coord, zoom) {
+        if (zoom < minZoom || zoom > maxZoom) {
+          return null;
+        }
+        var numTiles = 1 << zoom;
+        var x = ((coord.x % numTiles) + numTiles) % numTiles;
+        return [S1LRDEMcontourOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      },
+  opacity: 0.7,
+  name: 'Rio Meander Map',
+  tileSize: new google.maps.Size(256, 256)
+  });
+
+var S1LRDEMcolor = new
+google.maps.ImageMapType({
+  getTileUrl: function(coord, zoom) {
+        if (zoom < minZoom || zoom > maxZoom) {
+          return null;
+        }
+        var numTiles = 1 << zoom;
+        var x = ((coord.x % numTiles) + numTiles) % numTiles;
+        return [S1LRDEMcolorOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      },
+  opacity: 0.7,
+  name: 'Rio Meander Map',
+  tileSize: new google.maps.Size(256, 256)
+  });
+
 var S1HRDEM = new
 google.maps.ImageMapType({
 getTileUrl: function(coord, zoom) {
@@ -542,6 +638,12 @@ map.overlayMapTypes.insertAt(0, S1);
 map.overlayMapTypes.insertAt(0, S2HRDEM);
 map.overlayMapTypes.insertAt(0, S1HRDEM);
 map.overlayMapTypes.insertAt(0, Index);
+map.overlayMapTypes.insertAt(0, S1LRDEMcontour);
+map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
+map.overlayMapTypes.insertAt(0, S2LRDEMcontour);
+map.overlayMapTypes.insertAt(0, S2LRDEMcolor);
+map.overlayMapTypes.insertAt(0, S3LRDEMcontour);
+map.overlayMapTypes.insertAt(0, S3LRDEMcolor);
 
 //Data Layer (Geojson)
 var data_layer_1 = new google.maps.Data({map: map});
@@ -587,4 +689,10 @@ var newOpacityStr = $(this).val();
 var newOpacity = parseFloat(newOpacityStr);
 S1HRDEM.setOpacity(newOpacity);
 S2HRDEM.setOpacity(newOpacity);
+S1LRDEMcolor.setOpacity(newOpacity);
+S1LRDEMcontour.setOpacity(newOpacity);
+S2LRDEMcolor.setOpacity(newOpacity);
+S2LRDEMcontour.setOpacity(newOpacity);
+S3LRDEMcolor.setOpacity(newOpacity);
+S3LRDEMcontour.setOpacity(newOpacity);
 });
