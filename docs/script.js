@@ -271,7 +271,7 @@ var tileSuffix = '';
 
 
 //generate the tile urls and set up the overlay options
-var S3LRDEMcontour
+var S3LRDEMcontour = new
 google.maps.ImageMapType({
   getTileUrl: function(coord, zoom) {
         if (zoom < minZoom || zoom > maxZoom) {
@@ -286,7 +286,7 @@ google.maps.ImageMapType({
   tileSize: new google.maps.Size(256, 256)
   });
 
-var S3LRDEMcolor
+var S3LRDEMcolor = new
 google.maps.ImageMapType({
   getTileUrl: function(coord, zoom) {
         if (zoom < minZoom || zoom > maxZoom) {
