@@ -4,10 +4,11 @@ var maxZoom =  15.0 ;
 
 
 //path to map tiles parent folder
-var TerrainOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/highresolution\/'; 
+var S1HROverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/highresolution\/'; 
 var IndexOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/indextiles\/';
 var S1OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1\/';
 var S2OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2\/';
+var S2HROverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2HRDEM\/';
 var S3OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S3\/';
 var S4AOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S4A\/';
 var S4FOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S4F\/';
@@ -17,7 +18,7 @@ var tileSuffix = '';
 
 
 //generate the tile urls and set up the overlay options
-var Terrain = new
+var S1HRDEM = new
 google.maps.ImageMapType({
 getTileUrl: function(coord, zoom) {
       if (zoom < minZoom || zoom > maxZoom) {
@@ -25,7 +26,22 @@ getTileUrl: function(coord, zoom) {
       }
       var numTiles = 1 << zoom;
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
-      return [TerrainOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+      return [S1HROverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
+    },
+opacity: 0.7,
+name: 'Rio Meander Map',
+tileSize: new google.maps.Size(256, 256)
+});
+
+var S2HRDEM = new
+google.maps.ImageMapType({
+getTileUrl: function(coord, zoom) {
+      if (zoom < minZoom || zoom > maxZoom) {
+        return null;
+      }
+      var numTiles = 1 << zoom;
+      var x = ((coord.x % numTiles) + numTiles) % numTiles;
+      return [S2HROverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
 opacity: 0.7,
 name: 'Rio Meander Map',
@@ -42,7 +58,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [IndexOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 1.0,
+opacity: .7,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -57,7 +73,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [S1OverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 0.7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -72,7 +88,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [S2OverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 0.7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -87,7 +103,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [S3OverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 0.7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -102,7 +118,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [S4AOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 0.7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -117,7 +133,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [S4FOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 0.7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -132,7 +148,7 @@ getTileUrl: function(coord, zoom) {
       var x = ((coord.x % numTiles) + numTiles) % numTiles;
       return [S5OverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
     },
-opacity: 0.7,
+opacity: 1.0,
 name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
@@ -140,10 +156,10 @@ tileSize: new google.maps.Size(256, 256)
 //THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS 
 function initMap() {
 
-  var mapOptions = {
-center: {lat: 28.001088, lng: -101.068543},
+var mapOptions = {
+center: {lat: 28.601088, lng: -101.068543},
 zoom: 6,
-maxZoom: 15,
+maxZoom: 18,
 minZoom: 6,
 scaleControl: true,
 streetViewControl: true,
@@ -239,6 +255,31 @@ mapTypeId: 'terrain',
 // The line below creates the map, assigning it to this variable. 
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+//Marker interactions
+var icon = {
+  url: "https://storage.googleapis.com/riomap/Index/close.png", // url
+  scaledSize: new google.maps.Size(25, 25), // scaled size
+  anchor: new google.maps.Point(15, 10) // anchor
+};
+
+var marker1 = new google.maps.Marker({
+  position: {lat: 31.60731097762663, lng: -105.98259474086535}, 
+  map,
+  title: "Click to zoom",
+  icon: icon,
+});
+
+
+
+
+
+
+
+marker1.addListener("click", () => {
+  map.setZoom(10);
+  map.panTo(marker1.position);
+});
+
 
 
 //once the map is generated, display the Terrain Map overlay
@@ -248,7 +289,8 @@ map.overlayMapTypes.insertAt(0, S4A);
 map.overlayMapTypes.insertAt(0, S3);
 map.overlayMapTypes.insertAt(0, S2);
 map.overlayMapTypes.insertAt(0, S1);
-map.overlayMapTypes.insertAt(0, Terrain);
+map.overlayMapTypes.insertAt(0, S2HRDEM);
+map.overlayMapTypes.insertAt(0, S1HRDEM);
 map.overlayMapTypes.insertAt(0, Index);
 
 //Data Layer (Geojson)
@@ -279,6 +321,6 @@ window.onload = initMap;
 $('#slider1').change(function() {
 var newOpacityStr = $(this).val();
 var newOpacity = parseFloat(newOpacityStr);
-Terrain.setOpacity(newOpacity);
-S1.setOpacity(newOpacity);
+S1HRDEM.setOpacity(newOpacity);
+S2HRDEM.setOpacity(newOpacity);
 });
