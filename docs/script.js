@@ -447,6 +447,13 @@ mapTypeId: 'terrain',
   ]
 },
 {
+  featureType: "transit",
+  elementType: "all",
+  stylers: [
+    { visibility: "off" }
+  ]
+},
+{
   featureType: "landscape",
   elementType: "labels",
   stylers: [
