@@ -1,3 +1,243 @@
+///Locator Buttons
+
+var Rio = {lat: 28.601088, lng: -101.068543};
+function CenterControl1(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Back to Index";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter(Rio);
+    map.setZoom(6);
+  });
+}
+
+var S1 = {lat: 31.60731097762663, lng: -105.98259474086535};
+function CenterControl2(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Spread 1";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter({lat: 31.60731097762663, lng: -105.98259474086535});
+    map.setZoom(10);
+  });
+}
+
+var S2 = {lat: 29.559971653244393, lng: -104.40264808976754};
+function CenterControl3(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Spread 2";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter({lat:29.555661731902605, lng:-104.33053264821585});  
+    map.setZoom(11);
+  });
+}
+
+var S3 = {lat: 29.174988401861018, lng: -102.95747503731427}; 
+function CenterControl4(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Spread 3";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter({lat: 29.174988401861018, lng: -102.95747503731427});  
+    map.setZoom(12);
+  });
+}
+
+var S4A = {lat: 29.55711457185718, lng: -101.20822896157583};
+function CenterControl5(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Spread 4A";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter({lat: 29.55711457185718, lng: -101.20822896157583});  
+    map.setZoom(10);
+  });
+}
+
+var S4F = {lat: 26.753135146710065, lng: -99.36749824712953}; 
+function CenterControl6(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Spread 4F";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter({lat: 26.753135146710065, lng: -99.36749824712953});  
+    map.setZoom(10);
+  });
+}
+
+var S5 = {lat: 25.88205512070168, lng: -97.34156402206229}; 
+function CenterControl7(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+
+  controlUI.style.backgroundColor = "#000";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "1px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.marginTop = "5px";
+  controlUI.style.marginBottom = "5px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+
+  controlText.style.color = "rgb(255,255,255)";
+  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontSize = "18px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Spread 5";
+  controlUI.appendChild(controlText);
+  // Setup the click event listeners: simply set the map to Chicago.
+  controlUI.addEventListener("click", () => {
+    map.setCenter({lat: 25.88205512070168, lng: -97.34156402206229});  
+    map.setZoom(11.5);
+  });
+}
+
 //create the Terrain map overlay
 var minZoom =  6.0 ;
 var maxZoom =  15.0 ;
@@ -255,9 +495,11 @@ mapTypeId: 'terrain',
 // The line below creates the map, assigning it to this variable. 
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
+
 //Marker interactions
 var icon = {
-  url: "https://storage.googleapis.com/riomap/Index/close.png", // url
+  url: "https://storage.googleapis.com/riomap/Index/butterfly.png", // url
   scaledSize: new google.maps.Size(25, 25), // scaled size
   anchor: new google.maps.Point(15, 10) // anchor
 };
@@ -268,12 +510,6 @@ var marker1 = new google.maps.Marker({
   title: "Click to zoom",
   icon: icon,
 });
-
-
-
-
-
-
 
 marker1.addListener("click", () => {
   map.setZoom(10);
@@ -312,9 +548,23 @@ data_layer_2.setStyle({
     strokeWeight: 1
 });
 
+//////Center button////
+
+const centerControlDiv = document.createElement("div");
+
+CenterControl1(centerControlDiv, map);
+CenterControl2(centerControlDiv, map);
+CenterControl3(centerControlDiv, map);
+CenterControl4(centerControlDiv, map);
+CenterControl5(centerControlDiv, map);
+CenterControl6(centerControlDiv, map);
+CenterControl7(centerControlDiv, map);
+
+map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv); 
+
 }
 
-
+/////Load////
 window.onload = initMap;
 
 //listen for changes to the opacity slider and update the overlay opacity
