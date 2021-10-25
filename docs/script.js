@@ -12,6 +12,7 @@ function CenterControl1(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
@@ -46,6 +47,7 @@ function CenterControl2(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
@@ -80,6 +82,7 @@ function CenterControl3(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
@@ -114,6 +117,7 @@ function CenterControl4(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
@@ -148,6 +152,7 @@ function CenterControl5(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
@@ -182,6 +187,7 @@ function CenterControl6(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
@@ -216,6 +222,7 @@ function CenterControl7(controlDiv, map) {
   controlUI.style.cursor = "pointer";
   controlUI.style.marginTop = "5px";
   controlUI.style.marginBottom = "5px";
+  controlUI.style.marginRight = "10px";
   controlUI.style.textAlign = "center";
   controlUI.title = "Click to recenter the map";
   controlDiv.appendChild(controlUI);
