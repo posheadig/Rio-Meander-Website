@@ -9,12 +9,13 @@
   margin: 0;
   padding-top: 8px;
   padding-bottom: 6px;
+  padding-left: 20px;
   color: #ffffff;
-  text-align: center;
+  text-align: left;
 }
 
 .map-slider > input[type=range] {
-  width: 400px;
-  margin: 0 auto;
+  width: 220px;
+  margin: 4 auto;
   margin-top: 6px;
 }
