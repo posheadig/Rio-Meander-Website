@@ -593,6 +593,11 @@ name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
 
+/////Test
+
+var infowindow = new google.maps.InfoWindow();
+
+
 //THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS 
 function initMap() {
 
@@ -702,6 +707,8 @@ mapTypeId: 'terrain',
 // The line below creates the map, assigning it to this variable. 
 var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+////TEST
+
 
 
 //Marker interactions
@@ -725,7 +732,7 @@ marker1.addListener("click", () => {
 
 
 
-//once the map is generated, display the Terrain Map overlay
+//once the map is generated, display the Map overlays
 map.overlayMapTypes.insertAt(0, S5);
 map.overlayMapTypes.insertAt(0, S4F);
 map.overlayMapTypes.insertAt(0, S4A);
@@ -749,23 +756,31 @@ map.overlayMapTypes.insertAt(0, S5LRDEMcontour);
 map.overlayMapTypes.insertAt(0, S5LRDEMcolor);
 
 //Data Layer (Geojson)
-var data_layer_1 = new google.maps.Data({map: map});
-var data_layer_2 = new google.maps.Data({map: map});
+//var data_layer_1 = new google.maps.Data({map: map});
+//var data_layer_2 = new google.maps.Data({map: map});
 
-data_layer_1.loadGeoJson(
-    'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson');
-data_layer_2.loadGeoJson(
-    'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
 
-data_layer_1.setStyle({
-  fillOpacity: "0.02",
-    strokeWeight: .3,
-    strokeColor: '#039dfc'
-});
-data_layer_2.setStyle({
-    strokeColor: '#f65275',
-    strokeWeight: 1
-});
+//data_layer_2.loadGeoJson(
+  //  'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
+//data_layer_1.loadGeoJson(
+  //  'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson');
+
+
+
+//data_layer_1.setStyle({
+ // fillOpacity: "0.02",
+  //  strokeWeight: .3,
+  //  strokeColor: '#039dfc'
+//});
+//data_layer_2.setStyle({
+  //  strokeColor: '#f65275',
+  //  strokeWeight: 1
+//});
+
+
+
+////Info on Rivers
+
 
 //////Center button////
 
@@ -780,6 +795,34 @@ CenterControl6(centerControlDiv, map);
 CenterControl7(centerControlDiv, map);
 
 map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv); 
+
+//////DATA TEST/////////////
+
+map.data.loadGeoJson(
+  'https://storage.googleapis.com/riomap/Index/S4F1980.geojson');
+  map.data.setStyle({strokeOpacity: "0.01"});
+
+  
+  map.data.addListener('mouseover', function(event) {
+    var feat = event.feature;
+    var html = "<b>"+feat.getProperty('PaperSpace')+"</b><br>"+feat.getProperty('description');
+    html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('https://storage.googleapis.com/riomap/Index/S4F1980.geojson')+"'>Download Geojson file</a>";
+    infowindow.setContent(html);
+    infowindow.setPosition(event.latLng);
+    infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+    infowindow.open(map);
+    window.setTimeout(function(){infowindow.close();}, '2000');
+});
+
+
+
+ //map.data.addListener('mouseout', function(event) {
+ /// infowindow.close(map);
+//});
+
+
+//google.maps.event.addDomListener(window, 'load', initialize);
+
 
 }
 
