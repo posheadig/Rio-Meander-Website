@@ -798,20 +798,42 @@ map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
 
 //////DATA TEST/////////////
 
+
 map.data.loadGeoJson(
-  'https://storage.googleapis.com/riomap/Index/S4F1980.geojson');
-  map.data.setStyle({strokeOpacity: "0.01"});
+  'https://storage.googleapis.com/riomap/Index/S4F1983.geojson');
+  map.data.setStyle({strokeOpacity: "0.20", strokeWeight: 1});
+
+map.data.loadGeoJson(
+ 'https://storage.googleapis.com/riomap/Index/S4F1940.geojson');
+
+map.data.loadGeoJson(
+  'https://storage.googleapis.com/riomap/Index/S4F1950polygon.geojson');
+  
+map.data.loadGeoJson(
+  'https://storage.googleapis.com/riomap/Index/S4F1950.geojson');
+
+  map.data.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/S4F1980polygon.geojson');
+
+    map.data.loadGeoJson(
+      'https://storage.googleapis.com/riomap/Index/S4F1940polygon.geojson');
+    
+  map.data.loadGeoJson(
+      'https://storage.googleapis.com/riomap/Index/S31910.geojson');
 
   
-  map.data.addListener('mouseover', function(event) {
+
+  
+  map.data.addListener('click', function(event) {
     var feat = event.feature;
-    var html = "<b>"+feat.getProperty('PaperSpace')+"</b><br>"+feat.getProperty('description');
-    html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('https://storage.googleapis.com/riomap/Index/S4F1980.geojson')+"'>Download Geojson file</a>";
+    var html = "<b>"+feat.getProperty('PaperSpace');
+    html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+    html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
     infowindow.setContent(html);
     infowindow.setPosition(event.latLng);
     infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
     infowindow.open(map);
-    window.setTimeout(function(){infowindow.close();}, '2000');
+   // window.setTimeout(function(){infowindow.close();}, '2000');
 });
 
 
@@ -833,6 +855,7 @@ window.onload = initMap;
 $('#slider1').change(function() {
 var newOpacityStr = $(this).val();
 var newOpacity = parseFloat(newOpacityStr);
+Index.setOpacity(newOpacity);
 S1HRDEM.setOpacity(newOpacity);
 S2HRDEM.setOpacity(newOpacity);
 S1LRDEMcolor.setOpacity(newOpacity);
