@@ -251,6 +251,8 @@ var maxZoom =  15.0 ;
 
 
 //path to map tiles parent folder
+
+//DEM overlays
 var S5LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S5LRDEMcontour\/';
 var S5LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S5LRDEMcolor\/';
 var S4FLRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S4FLRDEMcolor\/';
@@ -264,6 +266,7 @@ var S2LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMc
 var S1LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcontour\/';
 var S1LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcolor\/';
 var S1HROverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/highresolution\/'; 
+//Layout Overlays
 var IndexOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/indextiles\/';
 var S1OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1\/';
 var S2OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2\/';
@@ -593,192 +596,160 @@ name: 'Rio Meander Map',
 tileSize: new google.maps.Size(256, 256)
 });
 
-/////Test
+/////Data Info Window
 
 var infowindow = new google.maps.InfoWindow();
+
+
+
 
 
 //THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS 
 function initMap() {
 
-var mapOptions = {
-center: {lat: 28.601088, lng: -101.068543},
-zoom: 6,
-maxZoom: 18,
-minZoom: 6,
-scaleControl: true,
-streetViewControl: true,
-mapTypeControl: true,
-mapTypeId: 'terrain',
-  styles: [
-    {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [{color: '#000000'}]
-    },
-{
-  featureType: "road",
-  elementType: "all",
-  stylers: [
-    { visibility: "off" }
-  ]
-},
-{
-  featureType: "administrative",
-  elementType: "labels",
-  stylers: [
-    { visibility: "off" }
-  ]
-},
-{
-  featureType: "administrative.neighborhood",
-  elementType: "labels",
-  stylers: [
-    { visibility: "off" }
-  ]
-},
-{
-  featureType: "administrative.land_parcel",
-  elementType: "labels",
-  stylers: [
-    { visibility: "off" }
-  ]
-},
-{
-  featureType: "poi",
-  elementType: "all",
-  stylers: [
-    { visibility: "off" }
-  ]
-},
-{
-  featureType: "transit",
-  elementType: "all",
-  stylers: [
-    { visibility: "off" }
-  ]
-},
-{
-  featureType: "landscape",
-  elementType: "labels",
-  stylers: [
-    { visibility: "off" }
-]},
-    {
-    featureType: "landscape",
-    elementType: "all",
-    stylers: [
-      { color: '#000000' }
-  ]},
-  {
-    featureType: "landscape",
-    elementType: "all",
-    stylers: [
-      { lightness: 100 }
-  ]},
-  {
-    featureType: "landscape",
-    elementType: "all",
-    stylers: [
-      { saturation: -50 }
-  ]},
-  {
-    featureType: "landscape",
-    elementType: "all",
-    stylers: [
-      { gamma: 10 }
-  ]},
-      {
-        featureType: 'water',
-        elementType: 'labels.text.fill',
-        stylers: [{color: '#515c6d'}]
-      },
-      {
-        featureType: 'water',
-        elementType: 'labels.text.stroke',
-        stylers: [{color: '#17263c'}]
-      },    
-  {
-    featureType: 'water',
-    elementType: 'geometry',
-    stylers: [{color: '#000000'}]
-  }]}
+
 
 // The line below creates the map, assigning it to this variable. 
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+var map = new google.maps.Map(document.getElementById("map"), {
+  center: {lat: 28.601088, lng: -101.068543},
+  gestureHandling: 'greedy',
+  zoom: 6,
+  heading: 320,
+  tilt: 47.5,
+  mapId: "c56cde107fc8df71",
+  scaleControl: true
+});
 
 ////TEST
 
 
 
-//Marker interactions
-var icon = {
-  url: "https://storage.googleapis.com/riomap/Index/butterfly.png", // url
-  scaledSize: new google.maps.Size(25, 25), // scaled size
-  anchor: new google.maps.Point(15, 10) // anchor
-};
+//Butterfly Marker interactions
+//var icon = {
+  //url: "https://storage.googleapis.com/riomap/Index/butterfly.png", // url
+  //scaledSize: new google.maps.Size(25, 25), // scaled size
+ //// anchor: new google.maps.Point(15, 10) // anchor
+//};
 
-var marker1 = new google.maps.Marker({
-  position: {lat: 31.60731097762663, lng: -105.98259474086535}, 
-  map,
-  title: "Click to zoom",
-  icon: icon,
-});
+//var marker1 = new google.maps.Marker({
+ // position: {lat: 31.60731097762663, lng: -105.98259474086535}, 
+ // map,
+ // title: "Click to zoom",
+  //icon: icon,
+//});
 
-marker1.addListener("click", () => {
-  map.setZoom(10);
-  map.panTo(marker1.position);
-});
+//marker1.addListener("click", () => {
+ // map.setZoom(10);
+ /// map.panTo(marker1.position);
+//});
 
 
 
 //once the map is generated, display the Map overlays
 
-map.overlayMapTypes.insertAt(0, S5);
-map.overlayMapTypes.insertAt(0, S4F);
-map.overlayMapTypes.insertAt(0, S4A);
-map.overlayMapTypes.insertAt(0, S3);
-map.overlayMapTypes.insertAt(0, S2);
-map.overlayMapTypes.insertAt(0, S1);
-map.overlayMapTypes.insertAt(0, S2HRDEM);
-map.overlayMapTypes.insertAt(0, S1HRDEM);
-map.overlayMapTypes.insertAt(0, Index);
-map.overlayMapTypes.insertAt(0, S1LRDEMcontour);
-map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
-map.overlayMapTypes.insertAt(0, S2LRDEMcontour);
-map.overlayMapTypes.insertAt(0, S2LRDEMcolor);
-map.overlayMapTypes.insertAt(0, S3LRDEMcontour);
-map.overlayMapTypes.insertAt(0, S3LRDEMcolor);
-map.overlayMapTypes.insertAt(0, S4ALRDEMcontour);
-map.overlayMapTypes.insertAt(0, S4ALRDEMcolor);
-map.overlayMapTypes.insertAt(0, S4FLRDEMcontour);
-map.overlayMapTypes.insertAt(0, S4FLRDEMcolor);
-map.overlayMapTypes.insertAt(0, S5LRDEMcontour);
-map.overlayMapTypes.insertAt(0, S5LRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S5);
+//map.overlayMapTypes.insertAt(0, S4F);
+//map.overlayMapTypes.insertAt(0, S4A);
+//map.overlayMapTypes.insertAt(0, S3);
+//map.overlayMapTypes.insertAt(0, S2);
+//map.overlayMapTypes.insertAt(0, S1);
+//map.overlayMapTypes.insertAt(0, S2HRDEM);
+//map.overlayMapTypes.insertAt(0, S1HRDEM);
+//map.overlayMapTypes.insertAt(0, Index);
+//map.overlayMapTypes.insertAt(0, S1LRDEMcontour);
+//map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S2LRDEMcontour);
+//map.overlayMapTypes.insertAt(0, S2LRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S3LRDEMcontour);
+//map.overlayMapTypes.insertAt(0, S3LRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S4ALRDEMcontour);
+//map.overlayMapTypes.insertAt(0, S4ALRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S4FLRDEMcontour);
+//map.overlayMapTypes.insertAt(0, S4FLRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S5LRDEMcontour);
+//map.overlayMapTypes.insertAt(0, S5LRDEMcolor);
 
 //Data Layer (Geojson)
-//var data_layer_1 = new google.maps.Data({map: map});
-//var data_layer_2 = new google.maps.Data({map: map});
+var data_layer_1 = new google.maps.Data({map: map});
+var data_layer_2 = new google.maps.Data({map: map});
+var data_layer_3 = new google.maps.Data({map: map});
+var data_layer_4 = new google.maps.Data({map: map});
+var data_layer_5 = new google.maps.Data({map: map});
 
+data_layer_2.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
+data_layer_1.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson');
+    data_layer_5.loadGeoJson(
+      'https://storage.googleapis.com/riomap/Index/S4A2020.geojson');
+      data_layer_4.loadGeoJson(
+        'https://storage.googleapis.com/riomap/Index/S4A1970s.geojson');
+      data_layer_3.loadGeoJson(
+      'https://storage.googleapis.com/riomap/Index/S4A1940s.geojson');
+   
+        
 
-//data_layer_2.loadGeoJson(
-  //  'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
-//data_layer_1.loadGeoJson(
-  //  'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson');
+data_layer_1.setStyle({
+  fillOpacity: "0.02",
+    strokeWeight: .3,
+    strokeColor: '#039dfc'
+});
+data_layer_2.setStyle({
+    strokeColor: '#f65275',
+    strokeWeight: 1
+});
+data_layer_3.setStyle({
+  fillColor: '#f3ba1e',
+  fillOpacity: "0.9",
+  strokeWeight: 0,
+  zIndex: 2
+});
+data_layer_4.setStyle({
+  fillColor: '#fe921c',
+  fillOpacity: "0.9",
+  strokeWeight: 0,
+  zIndex: 1
+});
+data_layer_5.setStyle({
+  fillColor: '#f65275',
+  fillOpacity: "0.9",
+  strokeWeight: 0,
+  zIndex: 0
+});
 
-
-
-//data_layer_1.setStyle({
- // fillOpacity: "0.02",
-  //  strokeWeight: .3,
-  //  strokeColor: '#039dfc'
-//});
-//data_layer_2.setStyle({
-  //  strokeColor: '#f65275',
-  //  strokeWeight: 1
-//});
-
-
+data_layer_3.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_5.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_4.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
 
 ////Info on Rivers
 
@@ -802,7 +773,22 @@ map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
 
 map.data.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/S4F1983.geojson');
-  map.data.setStyle({strokeOpacity: "0.20", strokeWeight: 1});
+  
+  //map.data.setStyle({strokeOpacity: "0.20", strokeWeight: 1});
+
+  map.data.setStyle(function(feature) {
+    var SD_NAME = feature.getProperty('PaperSpace');
+    var color = "red";
+    if (SD_NAME == "S4A1970s") {
+      color = "green";
+      
+    }
+    return {
+      fillColor: color,
+      strokeWeight: 1,
+      fillOpacity: "0.10"
+    }
+  });
 
 map.data.loadGeoJson(
  'https://storage.googleapis.com/riomap/Index/S4F1940.geojson');
@@ -813,16 +799,33 @@ map.data.loadGeoJson(
 map.data.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/S4F1950.geojson');
 
-  map.data.loadGeoJson(
+map.data.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/S4F1980polygon.geojson');
 
-    map.data.loadGeoJson(
+map.data.loadGeoJson(
       'https://storage.googleapis.com/riomap/Index/S4F1940polygon.geojson');
     
-  map.data.loadGeoJson(
+map.data.loadGeoJson(
       'https://storage.googleapis.com/riomap/Index/S31910.geojson');
 
-  
+map.data.loadGeoJson(
+'https://storage.googleapis.com/riomap/Index/S11953ElPaso.geojson');
+
+
+//map.data.loadGeoJson(
+//  'https://storage.googleapis.com/riomap/Index/S4A2020.geojson');
+
+ // map.data.loadGeoJson(
+ // 'https://storage.googleapis.com/riomap/Index/S4A1940s.geojson');
+
+
+ // map.data.loadGeoJson(
+  //  'https://storage.googleapis.com/riomap/Index/S4A1970s.geojson');
+
+map.data.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/S4ADam.geojson');
+
+
 
   
   map.data.addListener('click', function(event) {
