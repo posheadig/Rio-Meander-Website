@@ -677,46 +677,72 @@ var data_layer_4 = new google.maps.Data({map: map});
 var data_layer_5 = new google.maps.Data({map: map});
 
 data_layer_2.loadGeoJson(
-    'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
+  'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
 data_layer_1.loadGeoJson(
-    'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson');
-    data_layer_5.loadGeoJson(
-      'https://storage.googleapis.com/riomap/Index/S4A2020.geojson');
-      data_layer_4.loadGeoJson(
-        'https://storage.googleapis.com/riomap/Index/S4A1970s.geojson');
-      data_layer_3.loadGeoJson(
-      'https://storage.googleapis.com/riomap/Index/S4A1940s.geojson');
+  'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson');
+data_layer_5.loadGeoJson(
+ 'https://storage.googleapis.com/riomap/Index/S4A2020.geojson');
+data_layer_4.loadGeoJson(
+   'https://storage.googleapis.com/riomap/Index/S4A1970s.geojson');
+data_layer_3.loadGeoJson(
+  'https://storage.googleapis.com/riomap/Index/S4A1940s.geojson');
    
         
 
 data_layer_1.setStyle({
   fillOpacity: "0.02",
     strokeWeight: .3,
-    strokeColor: '#039dfc'
+    strokeColor: '#039dfc',
+    zIndex:0
 });
 data_layer_2.setStyle({
     strokeColor: '#f65275',
-    strokeWeight: 1
+    strokeWeight: 1,
+    zIndex:1
 });
 data_layer_3.setStyle({
   fillColor: '#f3ba1e',
   fillOpacity: "0.9",
   strokeWeight: 0,
-  zIndex: 2
+  zIndex: 4
 });
 data_layer_4.setStyle({
   fillColor: '#fe921c',
   fillOpacity: "0.9",
   strokeWeight: 0,
-  zIndex: 1
+  zIndex: 3
 });
 data_layer_5.setStyle({
   fillColor: '#f65275',
   fillOpacity: "0.9",
   strokeWeight: 0,
-  zIndex: 0
+  zIndex: 2
 });
 
+data_layer_1.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+ "Indigenous Language</a>";
+  html += "<br>"+feat.getProperty('Name');
+  //html += "<br>"+feat.getProperty('Country');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('description')+"'>Description</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_2.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+ "Treaty of 1944</a>";
+  html += "<br>"+feat.getProperty('Name');
+  html += "<br>"+feat.getProperty('Country');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
 data_layer_3.addListener('click', function(event) {
   var feat = event.feature;
   var html = "<b>"+feat.getProperty('PaperSpace');
