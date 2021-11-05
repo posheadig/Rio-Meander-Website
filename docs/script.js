@@ -677,10 +677,19 @@ var data_layer_2 = new google.maps.Data({map: map});
 var data_layer_3 = new google.maps.Data({map: map});
 var data_layer_4 = new google.maps.Data({map: map});
 var data_layer_5 = new google.maps.Data({map: map});
+//S1
 var data_layer_6 = new google.maps.Data({map: map});
 var data_layer_7 = new google.maps.Data({map: map});
 var data_layer_8 = new google.maps.Data({map: map});
 var data_layer_9 = new google.maps.Data({map: map});
+var data_layer_10 = new google.maps.Data({map: map});
+var data_layer_11 = new google.maps.Data({map: map});
+var data_layer_12 = new google.maps.Data({map: map});
+var data_layer_13 = new google.maps.Data({map: map});
+var data_layer_14 = new google.maps.Data({map: map});
+var data_layer_15 = new google.maps.Data({map: map});
+var data_layer_16 = new google.maps.Data({map: map});
+
 
 data_layer_2.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
@@ -692,15 +701,29 @@ data_layer_4.loadGeoJson(
    'https://storage.googleapis.com/riomap/Index/S4A1970s.geojson');
 data_layer_3.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/S4A1940s.geojson');
+  ////S1
   data_layer_6.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/IBC/1852.geojson');
-  data_layer_7.loadGeoJson(
+    data_layer_7.loadGeoJson(
    'https://storage.googleapis.com/riomap/Index/IBC/1889.geojson');
   data_layer_8.loadGeoJson(
      'https://storage.googleapis.com/riomap/Index/IBC/1899.geojson');
   data_layer_9.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/IBC/1907.geojson');
-   
+    data_layer_10.loadGeoJson(
+      'https://storage.googleapis.com/riomap/Index/S1/1890s.geojson');
+data_layer_11.loadGeoJson(
+        'https://storage.googleapis.com/riomap/Index/S1/1910s.geojson');
+        data_layer_12.loadGeoJson(
+          'https://storage.googleapis.com/riomap/Index/S1/1930s.geojson'); 
+          data_layer_13.loadGeoJson(
+            'https://storage.googleapis.com/riomap/Index/S1/1940s.geojson');
+            data_layer_14.loadGeoJson(
+              'https://storage.googleapis.com/riomap/Index/S1/1950s.geojson');
+              data_layer_15.loadGeoJson(
+                'https://storage.googleapis.com/riomap/Index/S1/1970s.geojson');
+                data_layer_16.loadGeoJson(
+                  'https://storage.googleapis.com/riomap/Index/S1/1980s.geojson');
         
 
 data_layer_1.setStyle({
@@ -732,30 +755,74 @@ data_layer_5.setStyle({
   strokeWeight: 0,
   zIndex: 2
 });
+///S1
 data_layer_6.setStyle({
   fillColor: '#b3c78c',
   fillOpacity: "0.9",
   strokeWeight: 0,
-  zIndex:4
+  zIndex:10
 });
 data_layer_7.setStyle({
 fillColor: '#a0baa5',
 fillOpacity: "0.9",
 strokeWeight: 0,
-zIndex: 3
+zIndex: 9
 });
 data_layer_8.setStyle({
 fillColor: '#e0ce72',
 fillOpacity: "0.9",
 strokeWeight: 0,
-zIndex: 2
+zIndex: 8
 });
 data_layer_9.setStyle({
 fillColor: '#d39487',
 fillOpacity: "0.9",
 strokeWeight: 0,
+zIndex: 7
+});
+data_layer_10.setStyle({
+  fillColor: '#f68720',
+  fillOpacity: "0.9",
+  strokeWeight: 0,
+  zIndex:6
+});
+data_layer_11.setStyle({
+fillColor: '#53839f',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 5
+});
+data_layer_12.setStyle({
+fillColor: '#f8d880',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 4
+});
+data_layer_13.setStyle({
+fillColor: '#f3ba1e',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 3
+});
+data_layer_14.setStyle({
+  fillColor: '#fae1df',
+  fillOpacity: "0.9",
+  strokeWeight: 0,
+  zIndex:2
+});
+data_layer_15.setStyle({
+fillColor: '#f9b699',
+fillOpacity: "0.9",
+strokeWeight: 0,
 zIndex: 1
 });
+data_layer_16.setStyle({
+fillColor: '#f16321',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 0
+});
+
 
 data_layer_1.addListener('click', function(event) {
   var feat = event.feature;
@@ -864,6 +931,76 @@ data_layer_5.addListener('click', function(event) {
   infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
   infowindow.open(map);
  // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_10.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_11.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_12.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_13.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_14.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_15.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_16.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
 });
 
 ////Info on Rivers
@@ -923,8 +1060,7 @@ map.data.loadGeoJson(
 map.data.loadGeoJson(
       'https://storage.googleapis.com/riomap/Index/S31910.geojson');
 
-map.data.loadGeoJson(
-'https://storage.googleapis.com/riomap/Index/S11953ElPaso.geojson');
+
 
 
 //map.data.loadGeoJson(
