@@ -65,8 +65,10 @@ function CenterControl2(controlDiv, map) {
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
-    map.setCenter({lat: 31.55731097762663, lng: -105.99259474086535});
+    map.setCenter({lat: 31.58931097762663, lng: -105.99259474086535});
     map.setZoom(10.30);
+    map.setHeading(280);
+    map.setTilt(47.5);
   });
 }
 
@@ -675,6 +677,10 @@ var data_layer_2 = new google.maps.Data({map: map});
 var data_layer_3 = new google.maps.Data({map: map});
 var data_layer_4 = new google.maps.Data({map: map});
 var data_layer_5 = new google.maps.Data({map: map});
+var data_layer_6 = new google.maps.Data({map: map});
+var data_layer_7 = new google.maps.Data({map: map});
+var data_layer_8 = new google.maps.Data({map: map});
+var data_layer_9 = new google.maps.Data({map: map});
 
 data_layer_2.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
@@ -686,6 +692,14 @@ data_layer_4.loadGeoJson(
    'https://storage.googleapis.com/riomap/Index/S4A1970s.geojson');
 data_layer_3.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/S4A1940s.geojson');
+  data_layer_6.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/IBC/1852.geojson');
+  data_layer_7.loadGeoJson(
+   'https://storage.googleapis.com/riomap/Index/IBC/1889.geojson');
+  data_layer_8.loadGeoJson(
+     'https://storage.googleapis.com/riomap/Index/IBC/1899.geojson');
+  data_layer_9.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/IBC/1907.geojson');
    
         
 
@@ -717,6 +731,30 @@ data_layer_5.setStyle({
   fillOpacity: "0.9",
   strokeWeight: 0,
   zIndex: 2
+});
+data_layer_6.setStyle({
+  fillColor: '#b3c78c',
+  fillOpacity: "0.9",
+  strokeWeight: 0,
+  zIndex:4
+});
+data_layer_7.setStyle({
+fillColor: '#a0baa5',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 3
+});
+data_layer_8.setStyle({
+fillColor: '#e0ce72',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 2
+});
+data_layer_9.setStyle({
+fillColor: '#d39487',
+fillOpacity: "0.9",
+strokeWeight: 0,
+zIndex: 1
 });
 
 data_layer_1.addListener('click', function(event) {
@@ -766,6 +804,57 @@ data_layer_5.addListener('click', function(event) {
  // window.setTimeout(function(){infowindow.close();}, '2000');
 });
 data_layer_4.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_5.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_6.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_7.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_8.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('PaperSpace');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});data_layer_9.addListener('click', function(event) {
   var feat = event.feature;
   var html = "<b>"+feat.getProperty('PaperSpace');
   html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
