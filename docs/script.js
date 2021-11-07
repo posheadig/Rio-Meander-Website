@@ -1,3 +1,7 @@
+
+
+
+
 ///Locator Buttons
 
 var Rio = {lat: 28.601088, lng: -101.068543};
@@ -21,12 +25,12 @@ function CenterControl1(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Back to Index";
+  controlText.innerHTML = "volver al índice";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -56,12 +60,12 @@ function CenterControl2(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Spread 1";
+  controlText.innerHTML = "propagación 1";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -93,12 +97,12 @@ function CenterControl3(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Spread 2";
+  controlText.innerHTML = "propagación 2";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -128,12 +132,12 @@ function CenterControl4(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Spread 3";
+  controlText.innerHTML = "propagación 1";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -163,12 +167,12 @@ function CenterControl5(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Spread 4A";
+  controlText.innerHTML = "propagación 4A";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -198,12 +202,12 @@ function CenterControl6(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Spread 4F";
+  controlText.innerHTML = "propagación 4F";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -233,12 +237,12 @@ function CenterControl7(controlDiv, map) {
   const controlText = document.createElement("div");
 
   controlText.style.color = "rgb(255,255,255)";
-  controlText.style.fontFamily = "Roboto,Arial,georgia";
+  controlText.style.fontFamily = "georgia";
   controlText.style.fontSize = "18px";
   controlText.style.lineHeight = "38px";
   controlText.style.paddingLeft = "5px";
   controlText.style.paddingRight = "5px";
-  controlText.innerHTML = "Spread 5";
+  controlText.innerHTML = "propagación 5";
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
@@ -249,7 +253,7 @@ function CenterControl7(controlDiv, map) {
 
 //create the Terrain map overlay
 var minZoom =  6.0 ;
-var maxZoom =  15.0 ;
+var maxZoom =  20.0 ;
 
 
 //path to map tiles parent folder
@@ -266,7 +270,7 @@ var S3LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S3LRDEMc
 var S2LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMcontour\/';
 var S2LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMcolor\/';
 var S1LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcontour\/';
-var S1LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcolor\/';
+var S1LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1new2\/';
 var S1HROverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/highresolution\/'; 
 //Layout Overlays
 var IndexOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/indextiles\/';
@@ -280,7 +284,38 @@ var S5OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S5\/';
 
 var tileSuffix = '';
 
-
+var TILE_URL = 'https://api.maptiler.com/tiles/terrain-rgb/{z}/{x}/{y}.png?key=mh9DlzDurxhdAH4U2Nhb';
+// Create a new ImageMapType layer.
+var myMapType = new google.maps.ImageMapType({
+  name: "MYLAYER",
+  getTileUrl: function(coord, zoom) {
+    var url = TILE_URL
+      .replace('{x}', coord.x)
+      .replace('{y}', coord.y)
+      .replace('{z}', zoom);
+    return url;
+  },
+  tileSize: new google.maps.Size(256, 256),
+  minZoom: 1,
+  maxZoom: 20,
+  opacity: 1
+});
+var TILE_URL2 = 'https://api.maptiler.com/tiles/hillshades/{z}/{x}/{y}.png?key=mh9DlzDurxhdAH4U2Nhb';
+// Create a new ImageMapType layer.
+var myMapType2 = new google.maps.ImageMapType({
+  name: "MYLAYER2",
+  getTileUrl: function(coord, zoom) {
+    var url = TILE_URL2
+      .replace('{x}', coord.x)
+      .replace('{y}', coord.y)
+      .replace('{z}', zoom);
+    return url;
+  },
+  tileSize: new google.maps.Size(256, 256),
+  minZoom: 1,
+  maxZoom: 20,
+  opacity: 0.7
+});
 //generate the tile urls and set up the overlay options
 var S5LRDEMcontour = new
 google.maps.ImageMapType({
@@ -614,7 +649,7 @@ function initMap() {
 // The line below creates the map, assigning it to this variable. 
 var map = new google.maps.Map(document.getElementById("map"), {
   center: {lat: 28.601088, lng: -101.068543},
-  gestureHandling: 'greedy',
+  gestureHandling: 'cooperative',
   zoom: 6,
   heading: 320,
   tilt: 47.5,
@@ -622,23 +657,49 @@ var map = new google.maps.Map(document.getElementById("map"), {
   scaleControl: true
 });
 
+var panorama = new google.maps.StreetViewPanorama(
+  document.getElementById("street-view"),
+  {
+    position: { lat: 31.48440, lng: -106.16293 },
+   pov: { heading: 165, pitch: 0 },
+    zoom: 0,
+    enableCloseButton: true
+  }
+);
+
+
+ 
+
 ////TEST
 
+map.setStreetView(panorama);
 
 
 //Butterfly Marker interactions
-//var icon = {
-  //url: "https://storage.googleapis.com/riomap/Index/butterfly.png", // url
-  //scaledSize: new google.maps.Size(25, 25), // scaled size
- //// anchor: new google.maps.Point(15, 10) // anchor
-//};
+var icon = {
+  url: "https://storage.googleapis.com/riomap/Index/arbitration%201911.png", // url
+//  scaledSize: new google.maps.Size(25, 25), // scaled size
+ // anchor: new google.maps.Point(15, 10) // anchor
+};
 
-//var marker1 = new google.maps.Marker({
- // position: {lat: 31.60731097762663, lng: -105.98259474086535}, 
- // map,
- // title: "Click to zoom",
-  //icon: icon,
-//});
+var marker1 = new google.maps.Marker({
+  position: {lat: 31.48379, lng: -106.16370}, 
+  map: panorama,
+ //title: "Click to zoom",
+  icon: icon,
+});
+var icon2 = {
+  url: "https://storage.googleapis.com/riomap/Index/arbitration%20continued.png", // url
+//  scaledSize: new google.maps.Size(25, 25), // scaled size
+ // anchor: new google.maps.Point(15, 10) // anchor
+};
+
+var marker2 = new google.maps.Marker({
+  position: {lat: 31.47933, lng: -106.15964}, 
+  map: panorama,
+ //title: "Click to zoom",
+  icon: icon2,
+});
 
 //marker1.addListener("click", () => {
  // map.setZoom(10);
@@ -648,7 +709,8 @@ var map = new google.maps.Map(document.getElementById("map"), {
 
 
 //once the map is generated, display the Map overlays
-
+map.overlayMapTypes.insertAt(0, myMapType2);
+//map.overlayMapTypes.insertAt(0, myMapType);
 //map.overlayMapTypes.insertAt(0, S5);
 //map.overlayMapTypes.insertAt(0, S4F);
 //map.overlayMapTypes.insertAt(0, S4A);
@@ -724,7 +786,7 @@ data_layer_11.loadGeoJson(
                 'https://storage.googleapis.com/riomap/Index/S1/1970s.geojson');
                 data_layer_16.loadGeoJson(
                   'https://storage.googleapis.com/riomap/Index/S1/1980s.geojson');
-        
+     
 
 data_layer_1.setStyle({
   fillOpacity: "0.02",
@@ -758,31 +820,31 @@ data_layer_5.setStyle({
 ///S1
 data_layer_6.setStyle({
   fillColor: '#b3c78c',
-  fillOpacity: "0.9",
+  fillOpacity: "1.0",
   strokeWeight: 0,
   zIndex:10
 });
 data_layer_7.setStyle({
 fillColor: '#a0baa5',
-fillOpacity: "0.9",
+fillOpacity: "1.0",
 strokeWeight: 0,
 zIndex: 9
 });
 data_layer_8.setStyle({
 fillColor: '#e0ce72',
-fillOpacity: "0.9",
+fillOpacity: "1.0",
 strokeWeight: 0,
 zIndex: 8
 });
 data_layer_9.setStyle({
 fillColor: '#d39487',
-fillOpacity: "0.9",
+fillOpacity: "1.0",
 strokeWeight: 0,
 zIndex: 7
 });
 data_layer_10.setStyle({
   fillColor: '#f68720',
-  fillOpacity: "0.9",
+  fillOpacity: "1.0",
   strokeWeight: 0,
   zIndex:6
 });
@@ -1125,4 +1187,6 @@ S4FLRDEMcolor.setOpacity(newOpacity);
 S4FLRDEMcontour.setOpacity(newOpacity);
 S5LRDEMcontour.setOpacity(newOpacity);
 S5LRDEMcolor.setOpacity(newOpacity);
+myMapType.setOpacity(newOpacity);
+myMapType2.setOpacity(newOpacity);
 });
