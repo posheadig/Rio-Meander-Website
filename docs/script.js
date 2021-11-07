@@ -661,7 +661,7 @@ var panorama = new google.maps.StreetViewPanorama(
   document.getElementById("street-view"),
   {
     position: { lat: 31.48440, lng: -106.16293 },
-   pov: { heading: 165, pitch: 0 },
+   pov: { heading: 200, pitch: 0 },
     zoom: 0,
     enableCloseButton: true
   }
@@ -681,6 +681,7 @@ var icon = {
 //  scaledSize: new google.maps.Size(25, 25), // scaled size
  // anchor: new google.maps.Point(15, 10) // anchor
 };
+
 
 var marker1 = new google.maps.Marker({
   position: {lat: 31.48379, lng: -106.16370}, 
