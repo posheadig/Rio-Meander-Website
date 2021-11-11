@@ -270,7 +270,7 @@ var S3LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S3LRDEMc
 var S2LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMcontour\/';
 var S2LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S2LRDEMcolor\/';
 var S1LRDEMcontourOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1LRDEMcontour\/';
-var S1LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1new2\/';
+var S1LRDEMcolorOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S1justtext\/';
 var S1HROverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/highresolution\/'; 
 //Layout Overlays
 var IndexOverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/indextiles\/';
@@ -648,9 +648,9 @@ function initMap() {
 
 // The line below creates the map, assigning it to this variable. 
 var map = new google.maps.Map(document.getElementById("map"), {
-  center: {lat: 28.601088, lng: -101.068543},
+  center: {lat: 31.64731097762663, lng: -106.05259474086535},
   gestureHandling: 'cooperative',
-  zoom: 6,
+  zoom: 11.4,
   heading: 320,
   tilt: 47.5,
   mapId: "c56cde107fc8df71",
@@ -722,7 +722,7 @@ map.overlayMapTypes.insertAt(0, myMapType2);
 //map.overlayMapTypes.insertAt(0, S1HRDEM);
 //map.overlayMapTypes.insertAt(0, Index);
 //map.overlayMapTypes.insertAt(0, S1LRDEMcontour);
-//map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
+map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S2LRDEMcontour);
 //map.overlayMapTypes.insertAt(0, S2LRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S3LRDEMcontour);
