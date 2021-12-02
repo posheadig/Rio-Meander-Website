@@ -677,7 +677,7 @@ map.setStreetView(panorama);
 
 //Butterfly Marker interactions
 var icon = {
-  url: "https://storage.googleapis.com/riomap/Index/arbitration%201911.png", // url
+  url: "https://storage.googleapis.com/riomap/Its_My_Life_Sri_Lankan_Version_Sandaru_Sathsara.gif", // url
 //  scaledSize: new google.maps.Size(25, 25), // scaled size
  // anchor: new google.maps.Point(15, 10) // anchor
 };
@@ -690,7 +690,7 @@ var marker1 = new google.maps.Marker({
   icon: icon,
 });
 var icon2 = {
-  url: "https://storage.googleapis.com/riomap/Index/arbitration%20continued.png", // url
+  url: "https://storage.googleapis.com/riomap/Index/arbitration%201911.png", // url
 //  scaledSize: new google.maps.Size(25, 25), // scaled size
  // anchor: new google.maps.Point(15, 10) // anchor
 };
