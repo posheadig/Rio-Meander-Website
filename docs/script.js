@@ -724,7 +724,7 @@ var marker3 = new google.maps.Marker({
   map: map,
   icon: icon4
 });
-var name = 'clickaway';
+var name = 'story1';
 
 
 //var marker4 = new google.maps.Marker({
