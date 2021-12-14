@@ -689,13 +689,19 @@ var icon2 = {
 };
 var icon3 = {
   //url: "https://storage.googleapis.com/riomap/Index/S5river/storytest.gif"
-url: "https://storage.googleapis.com/riomap/Index/S5river/testtext"
+url: "https://storage.googleapis.com/riomap/Index/S5river/josetextbeginning.gif"
 
 }
 var icon4 = {
   //url: "https://storage.googleapis.com/riomap/Index/S5river/storytest.gif"
-url: "https://storage.googleapis.com/riomap/Index/S5river/testtext",
-  scaledSize: new google.maps.Size(400, 400), // scaled size
+url: "https://storage.googleapis.com/riomap/Index/S5river/Speaker_Icon.svg.png",
+  scaledSize: new google.maps.Size(50, 50), // scaled size
+}
+
+var icon5 = {
+  //url: "https://storage.googleapis.com/riomap/Index/S5river/storytest.gif"
+url: "https://storage.googleapis.com/riomap/Index/S5river/eye.png",
+  scaledSize: new google.maps.Size(25, 25), // scaled size
 }
 
 var marker1 = new google.maps.Marker({
@@ -716,6 +722,8 @@ var marker2 = new google.maps.Marker({
 var marker3 = new google.maps.Marker({
   position: {lat: 25.882778, lng: -97.476675},
   map: map,
+  icon: icon4
+ // icon: icon4
 });
 
 //var marker4 = new google.maps.Marker({
@@ -729,6 +737,13 @@ var marker5 = new google.maps.Marker({
   map: panorama,
   icon: icon3,
 });
+
+var marker6 = new google.maps.Marker({
+  position: { lat: 25.8790294, lng: -97.4813291 },
+  map: map,
+  icon: icon5
+})
+
 
 var content1 = '<div id="content">'+
 '<div id="siteNotice">'+
@@ -745,13 +760,13 @@ var infowindow5 = new google.maps.InfoWindow({
 var content2 = '<div id="content">'+
 '<div id="siteNotice">'+
 '</div>'+
-'<div id="bodyContent">'+
-'<iframe width="150" height="70" src="https://www.youtube.com/embed/ytNcpJxVkyQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+'<div id="bodyContent">'+ '<p>This is a place holder for one of Jose Villanuevas stories. In street view, the beginning of the story is seen. IN DEVOLOPMENT of locating other stories on the river.</p>' +
+'<iframe width="50" height="50" src="https://www.youtube.com/embed/2t5_AAqGHSo?controls=0&amp;start=6197" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
 '</div>'+
 '</div>';
 var infowindow6 = new google.maps.InfoWindow({
   content: content2,
-  maxWidth: 350
+  maxWidth: 150
 });
 
 marker2.addListener("click", () => {
