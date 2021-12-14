@@ -676,7 +676,8 @@ var panorama = new google.maps.StreetViewPanorama(
 map.setStreetView(panorama);
 
 
-//Butterfly Marker interactions
+//Marker interactions
+
 var icon = {
   url: "https://storage.googleapis.com/riomap/Its_My_Life_Sri_Lankan_Version_Sandaru_Sathsara.gif", // url
 //  scaledSize: new google.maps.Size(25, 25), // scaled size
@@ -701,7 +702,7 @@ url: "https://storage.googleapis.com/riomap/Index/S5river/Speaker_Icon.svg.png",
 var icon5 = {
   //url: "https://storage.googleapis.com/riomap/Index/S5river/storytest.gif"
 url: "https://storage.googleapis.com/riomap/Index/S5river/eye.png",
-  scaledSize: new google.maps.Size(25, 25), // scaled size
+  //scaledSize: new google.maps.Size(25, 25), // scaled size
 }
 
 var marker1 = new google.maps.Marker({
@@ -710,7 +711,6 @@ var marker1 = new google.maps.Marker({
  //title: "Click to zoom",
   icon: icon,
 });
-
 
 var marker2 = new google.maps.Marker({
   position: {lat: 31.47933, lng: -106.15964}, 
@@ -723,8 +723,9 @@ var marker3 = new google.maps.Marker({
   position: {lat: 25.882778, lng: -97.476675},
   map: map,
   icon: icon4
- // icon: icon4
 });
+var name = 'clickaway';
+
 
 //var marker4 = new google.maps.Marker({
  // position: { lat: 25.882778, lng: -97.476675 },
@@ -740,7 +741,7 @@ var marker5 = new google.maps.Marker({
 
 var marker6 = new google.maps.Marker({
   position: { lat: 25.8790294, lng: -97.4813291 },
-  map: map,
+  map: panorama,
   icon: icon5
 })
 
@@ -782,6 +783,17 @@ marker3.addListener("click", () => {
   map.setTilt(90);
   map.setHeading(267.3);
 });
+google.maps.event.addDomListener(document.getElementById(name), 'click', function() {
+  infowindow6.open(map,marker3);
+   map.setZoom(16);
+  map.panTo(marker3.position);
+  map.setTilt(90);
+  map.setHeading(267.3);
+  panorama.setPosition(marker6.position);
+  panorama.setVisible(true);
+  panorama.setPov({ heading: 37.04, pitch: 25 });
+});
+
 
 
 //once the map is generated, display the Map overlays

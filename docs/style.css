@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #000000;
  
 }
 #street-view {
@@ -13,7 +14,7 @@ body {
 }
 
 #map{
-  top: 0;
+  top: 7%;
   left: 0;
   height: 100%;
   width: 100%;
@@ -42,4 +43,11 @@ body {
   width: 220px;
   margin: 4 auto;
   margin-top: 6px;
+}
+#clickaway {
+  background-color:#ff0000;
+  height:40px;
+  width:200px;
+  position: absolute;
+  left: 3%;
 }
