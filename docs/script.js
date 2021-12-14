@@ -705,6 +705,11 @@ url: "https://storage.googleapis.com/riomap/Index/S5river/eye.png",
   //scaledSize: new google.maps.Size(25, 25), // scaled size
 }
 
+var icon6 = {
+  url: "https://storage.googleapis.com/riomap/Index/S5river/Screen%20Shot%202021-12-14%20at%204.25.17%20PM.png",
+scaledSize: new google.maps.Size(50, 50), // scaled size
+}
+
 var marker1 = new google.maps.Marker({
   position: {lat: 31.48379, lng: -106.16370}, 
   map: panorama,
@@ -725,6 +730,7 @@ var marker3 = new google.maps.Marker({
   icon: icon4
 });
 var name = 'story1';
+var name2 = 'story2';
 
 
 //var marker4 = new google.maps.Marker({
@@ -743,7 +749,19 @@ var marker6 = new google.maps.Marker({
   position: { lat: 25.8790294, lng: -97.4813291 },
   map: panorama,
   icon: icon5
-})
+});
+
+var marker7 = new google.maps.Marker({
+  position: { lat: 31.74791, lng: -106.48812},
+  map: map,
+  icon: icon4
+});
+
+//var marker8 = new google.maps.Marker({
+ // position: { lat: 31.74819906821323, lng: -106.48809708598469}, 
+ // map: panorama,
+ //// icon: icon6
+//});
 
 
 var content1 = '<div id="content">'+
@@ -770,6 +788,18 @@ var infowindow6 = new google.maps.InfoWindow({
   maxWidth: 150
 });
 
+var content3 = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<div id="bodyContent">'+ '<p> Audio playing is the oral argument held in the US supreme court on 11/12/19, in which the court held that the precedent established under the 1971 Bivens v. Six Unknown Named Agents decision did not extend to claims based on cross-border shootings. </p>' +
+'<iframe width="750" height="750" src="https://storage.googleapis.com/riomap/Index/S5river/Screen%20Shot%202021-12-14%20at%204.25.17%20PM.png" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+'</div>'+
+'</div>';
+var infowindow7 = new google.maps.InfoWindow({
+  content: content3,
+  maxWidth: 800
+});
+
 marker2.addListener("click", () => {
   infowindow5.open(marker2.get("map"), marker2,);
   // map.setZoom(10);
@@ -783,6 +813,14 @@ marker3.addListener("click", () => {
   map.setTilt(90);
   map.setHeading(267.3);
 });
+marker7.addListener("click", () => {
+  infowindow7.open(marker7.get("map"), marker7,);
+   //map.setZoom(16);
+  //map.panTo(marker3.position);
+  //map.setTilt(90);
+  //map.setHeading(267.3);
+});
+
 google.maps.event.addDomListener(document.getElementById(name), 'click', function() {
   //infowindow6.open(map,marker3);
    map.setZoom(16);
@@ -791,9 +829,20 @@ google.maps.event.addDomListener(document.getElementById(name), 'click', functio
   map.setHeading(267.3);
   panorama.setPosition(marker6.position);
   panorama.setVisible(true);
-  panorama.setPov({ heading: 37.04, pitch: 25 });
+  panorama.setZoom(0);
+  panorama.setPov({ heading: 37.04, pitch: 15 });
 });
-
+google.maps.event.addDomListener(document.getElementById(name2), 'click', function() {
+  //infowindow6.open(map,marker3);
+   map.setZoom(16);
+  map.panTo(marker7.position);
+  map.setTilt(90);
+  map.setHeading(77.11);
+  panorama.setPosition({lat: 31.7488949, lng: -106.4884716});
+  panorama.setVisible(true);
+  panorama.setZoom(5);
+  panorama.setPov({ heading: 167.98, pitch: -2 });
+});
 
 
 //once the map is generated, display the Map overlays

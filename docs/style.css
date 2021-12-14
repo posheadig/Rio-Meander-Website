@@ -51,3 +51,10 @@ body {
   position: absolute;
   left: 3%;
 }
+#story2 {
+  background-color:#ff0000;
+  height:40px;
+  width:200px;
+  position: absolute;
+  left: 20%;
+}
