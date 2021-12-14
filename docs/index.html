@@ -42,8 +42,14 @@
   <source src="https://storage.googleapis.com/riomap/Index/S5river/placeholder.mp3" type="audio/mpeg">
 </audio>
 <script>
-  document.getElementById("story1").addEventListener("click", function () {
-    document.getElementById("linkAudio1").play();
+  document.getElementById("story1").addEventListener("click", 
+    function toggleSound() {
+  var audioElem = document.getElementById('linkAudio1');
+  if (audioElem.paused)
+    audioElem.play();
+  else
+    audioElem.pause();
+
     
   });
 </script>
@@ -51,8 +57,13 @@
 <source src="https://storage.googleapis.com/riomap/Index/S5river/Hernandez%20vs%20Mesa%20clip.mp3" type="audio/mpeg">
 </audio>
 <script>
-  document.getElementById("story2").addEventListener("click", function () {
-    document.getElementById("linkaudio2").play();
+  document.getElementById("story2").addEventListener("click", 
+  function toggleSound() {
+  var audioElem = document.getElementById('linkaudio2');
+  if (audioElem.paused)
+    audioElem.play();
+  else
+    audioElem.pause();
     
   });
 </script>
