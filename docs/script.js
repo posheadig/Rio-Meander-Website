@@ -784,7 +784,7 @@ marker3.addListener("click", () => {
   map.setHeading(267.3);
 });
 google.maps.event.addDomListener(document.getElementById(name), 'click', function() {
-  infowindow6.open(map,marker3);
+  //infowindow6.open(map,marker3);
    map.setZoom(16);
   map.panTo(marker3.position);
   map.setTilt(90);
