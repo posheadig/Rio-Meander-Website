@@ -893,7 +893,7 @@ var data_layer_18 = new google.maps.Data({map: map});
 var data_layer_19 = new google.maps.Data({map: map});
 var data_layer_20 = new google.maps.Data({map: map});
 var data_layer_21 = new google.maps.Data({map: map});
-
+var data_layer_22 = new google.maps.Data({map: map});
 
 data_layer_2.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
@@ -938,6 +938,8 @@ data_layer_18.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/S5river/1980s.geojson');
   data_layer_21.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/S5river/2000s.geojson');
+    data_layer_22.loadGeoJson(
+      'https://opendata.arcgis.com/datasets/e735940321bd4383bab528a91bf526f8_0.geojson');
   
 
 data_layer_1.setStyle({
@@ -1071,7 +1073,12 @@ data_layer_20.setStyle({
       strokeWeight: 0,
       zIndex: 2
       });
-
+      data_layer_22.setStyle({
+        strokeColor: '#FFFF00',
+        fillOpacity: "1",
+        strokeWeight: 1,
+        zIndex: 10
+        });
 
 data_layer_1.addListener('click', function(event) {
   var feat = event.feature;
