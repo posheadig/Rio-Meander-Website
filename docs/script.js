@@ -895,6 +895,10 @@ var data_layer_19 = new google.maps.Data({map: map});
 var data_layer_20 = new google.maps.Data({map: map});
 var data_layer_21 = new google.maps.Data({map: map});
 var data_layer_22 = new google.maps.Data({map: map});
+var data_layer_23 = new google.maps.Data({map: map});
+var data_layer_24 = new google.maps.Data({map: map});
+var data_layer_25 = new google.maps.Data({map: map});
+var data_layer_26 = new google.maps.Data({map: map});
 
 data_layer_2.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
@@ -941,7 +945,14 @@ data_layer_18.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/S5river/2000s.geojson');
     data_layer_22.loadGeoJson(
       'https://opendata.arcgis.com/datasets/e735940321bd4383bab528a91bf526f8_0.geojson');
-  
+  data_layer_23.loadGeoJson(
+    'https://storage.googleapis.com/riomap/Index/border_fence_map.geojson');
+    data_layer_24.loadGeoJson(
+      'https://storage.googleapis.com/riomap/Index/boundary.geojson');
+      data_layer_25.loadGeoJson(
+        'https://storage.googleapis.com/riomap/Index/pipelines.geojson');
+        data_layer_26.loadGeoJson(
+          'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
 
 data_layer_1.setStyle({
   fillOpacity: "0.02",
@@ -1088,6 +1099,31 @@ data_layer_20.setStyle({
             data_layer_22.setMap(null);
           }
         });
+        data_layer_23.setStyle({
+          strokeColor: '#b7410e',
+          fillOpacity: "1",
+          strokeWeight: 1,
+          zIndex: 11
+          });
+          data_layer_24.setStyle({
+            strokeColor: '#FFFF00',
+            fillOpacity: "1",
+            strokeWeight: 1,
+            zIndex: 11
+            });
+            data_layer_25.setStyle({
+              strokeColor: '#b7410e',
+              fillOpacity: "1",
+              strokeWeight: 1,
+              zIndex: 11
+              });
+              data_layer_26.setStyle({
+                FillColor: '#e29a86',
+                fillOpacity: ".7",
+                strokeWeight: 1,
+                zIndex: 12
+                });
+        
 
 data_layer_1.addListener('click', function(event) {
   var feat = event.feature;
@@ -1316,6 +1352,49 @@ data_layer_21.addListener('click', function(event) {
   var html = "<b>"+feat.getProperty('Layer');
   html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Linetype')+"'>Download Geojson file</a>";
   html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('Text')+"'>Source</a>";
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_23.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('barrier');
+  html += "<br>"+feat.getProperty('gen_type');
+  
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_24.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('BDRY_NAME1');
+  html += "<br>"+feat.getProperty('BDRY_APRV_');
+  
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_25.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('SDE_COMPAN');
+  html += "<br>"+feat.getProperty('PROD_CODE');
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
+  infowindow.open(map);
+ // window.setTimeout(function(){infowindow.close();}, '2000');
+});
+data_layer_26.addListener('click', function(event) {
+  var feat = event.feature;
+  var html = "<b>"+feat.getProperty('DATACAVEAT');
+  html += "<br>"+feat.getProperty('SITENAME_L');
+  html += "<br><a class='normal_link' target='_blank' href='"+feat.getProperty('LTTDT_LINK')+"'>Source</a>";
   infowindow.setContent(html);
   infowindow.setPosition(event.latLng);
   infowindow.setOptions({pixelOffset: new google.maps.Size(0,-34)});
