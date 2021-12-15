@@ -871,6 +871,7 @@ map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S5LRDEMcolor);
 
 //Data Layer (Geojson)
+
 var data_layer_1 = new google.maps.Data({map: map});
 var data_layer_2 = new google.maps.Data({map: map});
 var data_layer_3 = new google.maps.Data({map: map});
@@ -1072,12 +1073,20 @@ data_layer_20.setStyle({
       fillOpacity: "0.9",
       strokeWeight: 0,
       zIndex: 2
-      });
+      }); 
       data_layer_22.setStyle({
         strokeColor: '#FFFF00',
         fillOpacity: "1",
         strokeWeight: 1,
         zIndex: 10
+        });
+
+        $("#layer1_checkbox").change(function() {
+          if (this.checked) {
+            data_layer_22.setMap(map);
+          } else {
+            data_layer_22.setMap(null);
+          }
         });
 
 data_layer_1.addListener('click', function(event) {
@@ -1437,5 +1446,5 @@ S5LRDEMcontour.setOpacity(newOpacity);
 S5LRDEMcolor.setOpacity(newOpacity);
 myMapType.setOpacity(newOpacity);
 myMapType2.setOpacity(newOpacity);
-//data_layer_17.setOpacity(newOpacity);
+//data_layer_22.setOpacity(newOpacity);
 });

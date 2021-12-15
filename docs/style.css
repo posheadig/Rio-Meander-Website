@@ -28,6 +28,10 @@ body {
   background-color: #000000;
   z-index: 0
 }
+.checkbox1 {
+  color: #ffffff;
+  padding-left: 10px;
+}
 
 .map2-slider {
   background-color: #030d0f;
