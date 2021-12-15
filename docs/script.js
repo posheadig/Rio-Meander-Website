@@ -284,8 +284,8 @@ var S5OverlayUrl = 'https:\/\/storage.googleapis.com\/riomap\/S5\/';
 
 var tileSuffix = '';
 
-var TILE_URL = 'http://tiles.wmflabs.org/hillshading/{z}/{x}/{y}.png';
-//'https://api.maptiler.com/tiles/terrain-rgb/{z}/{x}/{y}.png?key=mh9DlzDurxhdAH4U2Nhb';
+var TILE_URL = //'http://tiles.wmflabs.org/hillshading/{z}/{x}/{y}.png';
+'https://api.maptiler.com/tiles/terrain-rgb/{z}/{x}/{y}.png?key=mh9DlzDurxhdAH4U2Nhb';
 // Create a new ImageMapType layer.
 var myMapType = new google.maps.ImageMapType({
   name: "MYLAYER",
@@ -494,7 +494,7 @@ google.maps.ImageMapType({
         var x = ((coord.x % numTiles) + numTiles) % numTiles;
         return [S1LRDEMcolorOverlayUrl, zoom, '/', x, '/', coord.y, tileSuffix].join('');
       },
-  opacity: 0.7,
+  opacity: 1,
   name: 'Rio Meander Map',
   tileSize: new google.maps.Size(256, 256)
   });
@@ -869,6 +869,14 @@ map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S4FLRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S5LRDEMcontour);
 //map.overlayMapTypes.insertAt(0, S5LRDEMcolor);
+
+$("#layer2_checkbox").change(function() {
+  if (this.checked) {
+    data_layer_22.setMap(map);
+  } else {
+    data_layer_22.setMap(null);
+  }
+});
 
 //Data Layer (Geojson)
 
