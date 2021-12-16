@@ -780,7 +780,7 @@ var content2 = '<div id="content">'+
 '<div id="siteNotice">'+
 '</div>'+
 '<div id="bodyContent">'+ '<p>This is a place holder for one of Jose Villanuevas stories. In street view, the beginning of the story is seen. IN DEVOLOPMENT of locating other stories on the river.</p>' +
-'<iframe width="50" height="50" src="https://www.youtube.com/embed/2t5_AAqGHSo?controls=0&amp;start=6197" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+
 '</div>'+
 '</div>';
 var infowindow6 = new google.maps.InfoWindow({
