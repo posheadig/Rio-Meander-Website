@@ -907,6 +907,7 @@ var data_layer_23 = new google.maps.Data({map: map});
 var data_layer_24 = new google.maps.Data({map: map});
 var data_layer_25 = new google.maps.Data({map: map});
 var data_layer_26 = new google.maps.Data({map: map});
+var data_layer_27 = new google.maps.Data({map: map});
 
 data_layer_2.loadGeoJson(
   'https://storage.googleapis.com/riomap/Index/treaty1944rivers.geojson');
@@ -956,11 +957,14 @@ data_layer_18.loadGeoJson(
   data_layer_23.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/border_fence_map.geojson');
     data_layer_24.loadGeoJson(
-      'https://storage.googleapis.com/riomap/Index/boundary.geojson');
+      'https://opendata.arcgis.com/datasets/c4abf391840049ce853a0a209ccbde55_0.geojson');
       data_layer_25.loadGeoJson(
         'https://storage.googleapis.com/riomap/Index/pipelines.geojson');
         data_layer_26.loadGeoJson(
           'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
+          data_layer_27.loadGeoJson(
+            'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
+
 
 data_layer_1.setStyle({
   fillOpacity: "0.02",
@@ -1379,8 +1383,8 @@ data_layer_23.addListener('click', function(event) {
 });
 data_layer_24.addListener('click', function(event) {
   var feat = event.feature;
-  var html = "<b>"+feat.getProperty('BDRY_NAME1');
-  html += "<br>"+feat.getProperty('BDRY_APRV_');
+  var html = "<b>"+feat.getProperty('FEAT_TYPE');
+  html += "<br>"+feat.getProperty('LEGAL_AUTH');
   
   infowindow.setContent(html);
   infowindow.setPosition(event.latLng);
