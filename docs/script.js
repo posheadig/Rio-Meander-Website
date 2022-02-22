@@ -636,27 +636,35 @@ tileSize: new google.maps.Size(256, 256)
 
 /////Data Info Window
 
-var infowindow = new google.maps.InfoWindow();
+var infowindow = new google.maps.InfoWindow({disableAutoPan: true});
 
+//import { AmbientLight, DirectionalLight, Scene } from "three";
+///import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+//import { ThreeJSOverlayView } from "@googlemaps/three";
 
-
-
+let map;
+const mapOptions = {
+  tilt: 90,
+  heading: 77.11,
+  zoom: 16,
+  center: {lat: 25.882778, lng: -97.476675},
+  mapId: "c56cde107fc8df71",
+  // disable interactions due to animation loop and moveCamera
+  //disableDefaultUI: true,
+  gestureHandling: "cooperative",
+  keyboardShortcuts: false,
+};
 
 //THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS 
 function initMap() {
+  const mapDiv = document.getElementById("map");
+
+  map = new google.maps.Map(mapDiv, mapOptions);
 
 
 
 // The line below creates the map, assigning it to this variable. 
-var map = new google.maps.Map(document.getElementById("map"), {
-  center: { lat: 25.8845837, lng: -97.4649607 },
-  gestureHandling: 'cooperative',
-  zoom: 16.4,
-  heading: 267,
-  tilt: 90.5,
-  mapId: "c56cde107fc8df71",
-  scaleControl: true
-});
+
 
 var panorama = new google.maps.StreetViewPanorama(
   document.getElementById("street-view"),
@@ -669,7 +677,7 @@ var panorama = new google.maps.StreetViewPanorama(
 );
 
 
- 
+
 
 ////TEST
 
@@ -729,6 +737,8 @@ var marker3 = new google.maps.Marker({
   map: map,
   icon: icon4
 });
+
+
 var name = 'story1';
 var name2 = 'story2';
 
@@ -776,16 +786,17 @@ var infowindow5 = new google.maps.InfoWindow({
   maxWidth: 350
 });
 
-var content2 = '<div id="content">'+
-'<div id="siteNotice">'+
-'</div>'+
-'<div id="bodyContent">'+ '<p>This is a place holder for one of Jose Villanuevas stories. In street view, the beginning of the story is seen. IN DEVOLOPMENT of locating other stories on the river.</p>' +
+var content2 = 
+'<audio controls autoplay>' +
+'<source src="https://storage.googleapis.com/riomap/Index/S5river/Part%202.m4a" type="audio/mp3">' +
 
-'</div>'+
-'</div>';
+'</audio>' +
+'<div id="bodyContent">'+ '<p>This is one of Jose Villanuevas stories. Click play to begin audio. In street view, the beginning of the story is seen.</p>';
 var infowindow6 = new google.maps.InfoWindow({
   content: content2,
-  maxWidth: 150
+  maxWidth: 500,
+  maxHeight: 300
+
 });
 
 var content3 = '<div id="content">'+
@@ -837,6 +848,7 @@ google.maps.event.addDomListener(document.getElementById(name2), 'click', functi
    map.setZoom(16);
   map.panTo(marker7.position);
   map.setTilt(90);
+  infowindow6.open(map, marker3);
   map.setHeading(77.11);
   panorama.setPosition({lat: 31.7488949, lng: -106.4884716});
   panorama.setVisible(true);
@@ -847,7 +859,7 @@ google.maps.event.addDomListener(document.getElementById(name2), 'click', functi
 
 //once the map is generated, display the Map overlays
 map.overlayMapTypes.insertAt(0, myMapType2);
-map.overlayMapTypes.insertAt(0, myMapType);
+//map.overlayMapTypes.insertAt(0, myMapType);
 //map.overlayMapTypes.insertAt(0, S5);
 //map.overlayMapTypes.insertAt(0, S4F);
 //map.overlayMapTypes.insertAt(0, S4A);
@@ -858,7 +870,7 @@ map.overlayMapTypes.insertAt(0, myMapType);
 //map.overlayMapTypes.insertAt(0, S1HRDEM);
 //map.overlayMapTypes.insertAt(0, Index);
 //map.overlayMapTypes.insertAt(0, S1LRDEMcontour);
-map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
+//map.overlayMapTypes.insertAt(0, S1LRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S2LRDEMcontour);
 //map.overlayMapTypes.insertAt(0, S2LRDEMcolor);
 //map.overlayMapTypes.insertAt(0, S3LRDEMcontour);
@@ -958,12 +970,12 @@ data_layer_18.loadGeoJson(
     'https://storage.googleapis.com/riomap/Index/border_fence_map.geojson');
     data_layer_24.loadGeoJson(
       'https://opendata.arcgis.com/datasets/c4abf391840049ce853a0a209ccbde55_0.geojson');
-      data_layer_25.loadGeoJson(
-        'https://storage.googleapis.com/riomap/Index/pipelines.geojson');
-        data_layer_26.loadGeoJson(
-          'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
-          data_layer_27.loadGeoJson(
-            'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
+    //  data_layer_25.loadGeoJson(
+    //    'https://storage.googleapis.com/riomap/Index/pipelines.geojson');
+    //    data_layer_26.loadGeoJson(
+    //      'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
+    //      data_layer_27.loadGeoJson(
+      //      'https://storage.googleapis.com/riomap/Index/HAPCMAP.geojson');
 
 
 data_layer_1.setStyle({
