@@ -1,94 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" id='top' >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Rio Meander</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script src="https://unpkg.com/three@0.129.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/@deck.gl/core@^7.0.0/dist.min.js"></script>
+  <meta name="viewport" content="width=device-width"; initial-scale="1.0" /><link rel="stylesheet" href="./style.css">
   <script src="https://unpkg.com/deck.gl@^8.7.0-alpha.2/dist.min.js"></script>
-<script src="https://unpkg.com/@deck.gl/google-maps@^7.0.0/dist.min.js"></script>
-<script src="https://unpkg.com/@tweenjs/tween.js@18.6.4/dist/tween.umd.js"></script>
-<script src="https://unpkg.com/@loaders.gl/csv@3.0.12/dist/dist.min.js"></script>
-<!-- usage -->
-<script type="text/javascript">
-  const {GoogleMapsOverlay} = deck;
-</script>
+  <script src="https://unpkg.com/three@0.129.0/build/three.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1DI-P2Ymglwb1ey5dVIXsmXhIxReUHmE&callback=initMap&v=beta&channel=2"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   
+
 </head>
+
 <body>
-  <h1 style="background-color:black;font-family:georgia;color:white;font-size:160%;text-align:center;">MEANDERING RIO WEBSITE: Scroll down for links that direct the map to audio visual stories.</h1>
-
-<!-- partial:index.partial.html -->
+<div id=title> <h1>  MEANDERING RIO  </h1></div>
+ <div id=intro> <p> Stories below are linked to places on the map. Click the submission form link to contribute your own media. <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnQRZaIPNLgXpHk5sidPDytefydpOlAfk-hbR8zhfoFP_cFw/viewform?usp=sf_link" target="_blank">Submission Form</a></p></div>
+ <div id=preface> <p> This is a place to observe some of the meandering history of the Rio Grande / Rio Bravo river over the last 250 years. It is also a place to encounter stories from contributors, and the oppurtunity to share your own story. Clicking on parts of the map will take you to more information. This project is still in development, and if you'd like to help info is below.</p><br><br><a>+ Press Shift and scroll forward or backward to tilt view up and down</a></div>
+ 
+<div id="container"></div>
+<div id="tooltip"></div>
+<div id="markers"></div>
 <div id="street-view"></div>
-<div id="map"></div>
-<div id="map2" class="map2"></div>
-<div class="checkbox1">
-Border Line (2017) <input id="layer1_checkbox" type="checkbox" checked /> </div>
-<div class="map2-slider">
-  Drag to show / hide Digital Elevations
-  <input id="slider1" type="range" min="0" max="1" step="0.1" value="0.7" />
-</div>
+<div id="information"> <h1> MEANDERS</h1><p> This project began with <a href="https://landarts.org/" target="_blank">Land Arts of the American West</a> in 2020. In collaboration with Texas Tech University, and a cohort of independant scholars, academics, artists, poets, and architects, the first meander map of the Rio Grande / Rio Bravo river was created. </p> <br>To learn about the process of creating the meanders, and for a full list of the contributors to the project, see Chris Taylor's essay titled, <a href="https://ar.fa.uni-lj.si/2020/drawing-time-making-the-rio-meander-map" target="_blank">Drawing Time: Making the Rio Meander Map</a>.</p><br> This short video displays a brief explanation of the process that was taken to create the meander map of the Rio Grande/Bravo river. <br><br><br> <iframe src="https://player.vimeo.com/video/680843922?h=1c843803a7" width="640" height="383" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
 
-<div class="container-fluid">
-  
-  <div class="">
-    <div class="col-sm-8 col-sm-offset-2">     
-    <h1 style="color:white;">Rio <small>Meander Map</small></h1>
-    <p class="lead"; style = "color:white;">Click anywhere on the map to view information about the territory and the river. Zoom in/out to see detail on the Rio Bravo/Grande river historical meanderings. Drag the slider to adjust the transparency of the Terrain.</p>
-    <p style = "color:white;">To change the heading and angle of the view, hold Shift then click and drag</p>
-    <p style="color:white;">
-      To learn about the process of creating the meanders: <a href="https://ar.fa.uni-lj.si/2020/drawing-time-making-the-rio-meander-map" target="_blank">Drawing Time</a>.
-    </p>
-  <br> <p style="color:white;font-family:georgia;color:whitesmoke;font-size:150%">     THE STORIES BELOW ARE CLICKABLE AND BRING YOU TO THE PLACE THEY OCCURED </p> </div>
-  </div><!-- /row --> 
-</div><!-- /container --><h1 These stories are clickable and bring you to the place that they happened</h1> <div></div>
-<div id= 'story1'> <a href="#top" style="color:rgb(75, 74, 74);text-align:center;"> Story 1 (25.882778, -97.476675)</a></div>
-<div id= 'story2'> <a href="#top" style="color:rgb(75, 74, 74);text-align:center;"> Story 2 (31.747912, -106.48812)</a></div>
-<audio id="linkAudio1">
-  
-  <source src="https://storage.googleapis.com/riomap/Index/S5river/Part%202.m4a" type="audio/mpeg">
-</audio>
-<script>
-  document.getElementById("story1").addEventListener("click", 
-    function toggleSound() {
-  var audioElem = document.getElementById('linkAudio1');
-  if (audioElem.paused)
-    audioElem.play();
-  else
-    audioElem.pause();
+<div id="information2"><h1> STORIES </h1><p> Interacting with the map is best done by clicking on one of the stories on the left side of the page, or one of the location buttons on the top right corner of the map. The popup text, while holding your mouse over certain areas, either tells you what year the river is from, what structure is there (border fence), or what indigenous land/language is native to that area (thank you <a href="https://native-land.ca/" target="_blank">native-land.ca</a>) </p><p>The data from the meandering project was largley retrieved from surveys and maps that are undeniably linked to colonial histories. A database of all the digitized archives and information that was collected and synthesized from the Meander project is on its way to being released in a subpage from this project, for open accesss.<br> <br> Myself (Patrick O'Shea) and Jose Villaneuva have begun this digital life of the meander project, with the goal of expanding the stories that reside in the land & water beyond the data that already exists. That is why we hope that others will contribute their stories and research to this page. The link to contribute is found at the top left corner of this page. The submission does not ask any personal information, and does not require it, because of the importance of care for others privacy.<br> <br> This is all still very much in development, and if you have any interest in helping with the project, either through research, editorial, technical, or administrative, please let us know in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnQRZaIPNLgXpHk5sidPDytefydpOlAfk-hbR8zhfoFP_cFw/viewform?usp=sf_link" target="_blank">Submission Form</a>.  </p> <p>This project uses the integration between QGIS, Google Earth Engine, Deck.GL, and Google Maps javascript api - the githube page can be found <a href="https://github.com/posheadig/Rio-Meander-Website" target="_blank">here.</a> </p></div>
 
-    
-  });
-</script>
-<audio id="linkaudio2">
-<source src="https://storage.googleapis.com/riomap/Index/S5river/Hernandez%20vs%20Mesa%20clip.mp3" type="audio/mpeg">
-</audio>
-<script>
-  document.getElementById("story2").addEventListener("click", 
-  function toggleSound() {
-  var audioElem = document.getElementById('linkaudio2');
-  if (audioElem.paused)
-    audioElem.play();
-  else
-    audioElem.pause();
-    
-  });
-</script>
-<div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfnQRZaIPNLgXpHk5sidPDytefydpOlAfk-hbR8zhfoFP_cFw/viewform?embedded=true" width="640" height="836" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+</body>
+
 
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1DI-P2Ymglwb1ey5dVIXsmXhIxReUHmE&callback=initMap&v=beta&channel=2"></script>
