@@ -359,6 +359,9 @@ const Amistad1970 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const Amistad1940 = new deck.GeoJsonLayer({
       id: 'A1',
@@ -390,6 +393,9 @@ const Amistad1940 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const Amistad2020 =   new deck.GeoJsonLayer({
       id: 'A3',
@@ -421,6 +427,9 @@ const Amistad2020 =   new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 ///S1
 const elpaso1852 =   new deck.GeoJsonLayer({
@@ -453,6 +462,9 @@ const elpaso1852 =   new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#Relative')
+      }
     });
 const elpaso1889 = new deck.GeoJsonLayer({
       id: 'S11889',
@@ -484,6 +496,9 @@ const elpaso1889 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#Relative')
+      }
     });
 const elpaso1890 = new deck.GeoJsonLayer({
       id: 'S11890',
@@ -515,6 +530,9 @@ const elpaso1890 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#1890s')
+      }
     });
 const elpaso1899 = new deck.GeoJsonLayer({
       id: 'S11899',
@@ -546,6 +564,9 @@ const elpaso1899 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#Relative')
+      }
     });
 const elpaso1907 = new deck.GeoJsonLayer({
       id: 'S11907',
@@ -577,6 +598,9 @@ const elpaso1907 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#Relative')
+      }
     });
 const elpaso1910 = new deck.GeoJsonLayer({
       id: 'S11910',
@@ -608,6 +632,9 @@ const elpaso1910 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const elpaso1930 = new deck.GeoJsonLayer({
       id: 'S11930',
@@ -639,6 +666,9 @@ const elpaso1930 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const elpaso1940 = new deck.GeoJsonLayer({
       id: 'S11940',
@@ -670,6 +700,9 @@ const elpaso1940 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const elpaso1950 = new deck.GeoJsonLayer({
       id: 'S11950',
@@ -701,6 +734,9 @@ const elpaso1950 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#El Paso, TX')
+      }
     });
 const elpaso1970 = new deck.GeoJsonLayer({
       id: 'S11970',
@@ -732,6 +768,9 @@ const elpaso1970 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const elpaso1980 = new deck.GeoJsonLayer({
       id: 'S11980',
@@ -763,6 +802,9 @@ const elpaso1980 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 //FALCON
 
@@ -796,6 +838,9 @@ const delta1930 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const delta1950 = new deck.GeoJsonLayer({
       id: 'S51950',
@@ -826,6 +871,9 @@ const delta1950 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const delta1960 = new deck.GeoJsonLayer({
       id: 'S51960',
@@ -856,6 +904,9 @@ const delta1960 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const delta1980 = new deck.GeoJsonLayer({
       id: 'S51980',
@@ -886,6 +937,9 @@ const delta1980 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const delta2000 = new deck.GeoJsonLayer({
       id: 'S52000',
@@ -916,6 +970,9 @@ const delta2000 = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 ///APIs
 const border = new deck.GeoJsonLayer({
@@ -944,6 +1001,9 @@ const border = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('https://hub.arcgis.com/datasets/e735940321bd4383bab528a91bf526f8_0/explore')
+      }
     });
 const fencemap = new deck.GeoJsonLayer({
       id: 'fence',
@@ -975,6 +1035,9 @@ const fencemap = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#')
+      }
     });
 const marineboundary = new deck.GeoJsonLayer({
       id: 'marineline',
@@ -1002,6 +1065,9 @@ const marineboundary = new deck.GeoJsonLayer({
         } else {
           info.style.opacity = 0.0;}
       },
+      onClick: ({ object, x, y }) => {
+        window.open('https://hub.arcgis.com/datasets/c4abf391840049ce853a0a209ccbde55_0/explore')
+      }
     });
 
 
