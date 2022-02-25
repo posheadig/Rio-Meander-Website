@@ -1144,5 +1144,5 @@ $('.marker-link').on('click', function () {
 
 
 //////FINAL///////
-overlay.setMap(null);
+overlay.setMap(map);
 overlay.finalize();
