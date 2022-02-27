@@ -54,3 +54,14 @@ border-spacing: 2px;
   }
 
   .anchor { padding-top: 70px; }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    font-family: helvetica;
+  }
+
+  

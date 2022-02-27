@@ -209,8 +209,6 @@ CenterControl4(centerControlDiv, map);
 
 map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
 
-
-
 //////DECK GL LAYERS/////
 
 //raster
@@ -235,20 +233,14 @@ const language =   new deck.GeoJsonLayer({
       id: 'INDIGENOUS',
       data: 'https://storage.googleapis.com/riomap/Index/indigenouslanguages.geojson',
       stroked: true,
-      filled: true,
-      opacity: .0005,
-      pointType: 'circle+text',
-      // getText: f => f.properties.Slug,
-      // getTextSize: 12,
-      lineWidthScale: 1,
-      lineWidthMinPixels: 1,
-      // pointRadiusScale: 2000,
-      //getRadius: f => (11 - f.properties.scalerank),
-      //getFillColor: [200, 0, 80, 180],
-      getLineColor: [200, 0, 90, 190],
-      getLineWidth: 10,
+      filled: false,
+      lineWidthMinPixels: 2,
+      getLineColor: [51, 102, 255],
+      getFillColor: [204, 204, 204],
       pickable: true,
-      autoHighlight: false,
+      autoHighlight: true,
+      highlightColor: [255, 255, 255],
+      opacity: .01,
       //onHover: setTooltip,
       onClick: ({ object, x, y }) => {
         window.open(`${object.properties.description}`)
@@ -531,7 +523,7 @@ const elpaso1890 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#1890s')
+        window.open('Data_directory.html#El Paso, TX 1896')
       }
     });
 const elpaso1899 = new deck.GeoJsonLayer({
@@ -1075,7 +1067,7 @@ const marineboundary = new deck.GeoJsonLayer({
 
 const overlay = new deck.GoogleMapsOverlay({
 layers: [language, border, treaty, terrain, Amistad2020, Amistad1940, Amistad1970, elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980, delta1930, delta1950, delta1960, delta1980, delta2000,fencemap, marineboundary]});
-
+//layers: [language]});
 
 /////PANORAMA ICONS////
 var icon2 = {url: "https://storage.googleapis.com/riomap/Index/S5river/Screen%20Shot%202021-12-14%20at%204.25.17%20PM.png",
@@ -1144,5 +1136,6 @@ $('.marker-link').on('click', function () {
 
 
 //////FINAL///////
+
 overlay.setMap(map);
-overlay.finalize();
+//overlay.finalize();
