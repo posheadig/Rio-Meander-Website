@@ -594,7 +594,41 @@ const elpaso1907 = new deck.GeoJsonLayer({
         window.open('Data_directory.html#Relative')
       }
     });
-const elpaso1910 = new deck.GeoJsonLayer({
+const elpaso1908 = new deck.GeoJsonLayer({
+      id: 'S11908',
+      data: 'https://storage.googleapis.com/riomap/Index/S1/1908.geojson',
+      extruded: true,
+      getElevation: 10,
+      filled: true,
+      material: true,
+      pointRadiusMinPixels: 5,
+      pointBillboard: true,
+      opacity: .5,  
+      pointRadiusScale: 50,
+      getText: f => f.properties.PaperSpace,
+      getTextSize: 10,
+      getRadius: 5,
+      getFillColor: [246, 142, 122],
+      pointType: 'circle+text',
+      pickable: true,
+      autoHighlight: true,
+      onHover: ({ object, x, y }) => {
+        const info = document.getElementById('tooltip');
+        if (object) {
+          const { properties: { PaperSpace } } = object;
+          info.innerHTML = `<h1> ${PaperSpace} </h1>`;
+          info.style.display = 'block';
+          info.style.opacity = 0.5;
+          info.style.left = x + 'px';
+          info.style.top = y + 'px';
+        } else {
+          info.style.opacity = 0.0;}
+      },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#Elpaso, TX 1908')
+      }
+    });
+    const elpaso1910 = new deck.GeoJsonLayer({
       id: 'S11910',
       data: 'https://storage.googleapis.com/riomap/Index/S1/1910s.geojson',
       extruded: true,
@@ -625,7 +659,7 @@ const elpaso1910 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#Canutillo, NM 1917')
       }
     });
 const elpaso1930 = new deck.GeoJsonLayer({
@@ -1066,7 +1100,7 @@ const marineboundary = new deck.GeoJsonLayer({
 
 
 const overlay = new deck.GoogleMapsOverlay({
-layers: [language, border, treaty, terrain, Amistad2020, Amistad1940, Amistad1970, elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980, delta1930, delta1950, delta1960, delta1980, delta2000,fencemap, marineboundary]});
+layers: [language, border, treaty, terrain, Amistad2020, Amistad1940, Amistad1970, elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1908, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980, delta1930, delta1950, delta1960, delta1980, delta2000,fencemap, marineboundary]});
 //layers: [language]});
 
 /////PANORAMA ICONS////
