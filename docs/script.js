@@ -523,7 +523,7 @@ const elpaso1890 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#El Paso, TX 1896')
+        window.open('Data_directory.html#TX_Fort Hancock_123977_1894_125000_geo')
       }
     });
 const elpaso1899 = new deck.GeoJsonLayer({
@@ -625,7 +625,7 @@ const elpaso1908 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#Elpaso, TX 1908')
+        window.open('Data_directory.html#TX_El Paso_123948_1908_125000_geo')
       }
     });
     const elpaso1910 = new deck.GeoJsonLayer({
@@ -659,7 +659,7 @@ const elpaso1908 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#Canutillo, NM 1917')
+        window.open('Data_directory.html#TX_Eagle Mountain_123927_1916_125000_geo')
       }
     });
 const elpaso1930 = new deck.GeoJsonLayer({
@@ -693,7 +693,7 @@ const elpaso1930 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Ysleta_117325_1939_62500_geo')
       }
     });
 const elpaso1940 = new deck.GeoJsonLayer({
@@ -727,7 +727,7 @@ const elpaso1940 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Clint_108727_1941_62500_geo')
       }
     });
 const elpaso1950 = new deck.GeoJsonLayer({
@@ -761,7 +761,7 @@ const elpaso1950 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#El Paso, TX')
+        window.open('Data_directory.html#TX_El Paso_107860_1953_250000_geo')
       }
     });
 const elpaso1970 = new deck.GeoJsonLayer({
@@ -795,7 +795,7 @@ const elpaso1970 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Acala_106119_1972_24000_geo')
       }
     });
 const elpaso1980 = new deck.GeoJsonLayer({
@@ -829,7 +829,7 @@ const elpaso1980 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_El Paso_107864_1983_1000000_geo.tif')
       }
     });
 //FALCON
@@ -1101,7 +1101,7 @@ const marineboundary = new deck.GeoJsonLayer({
 
 const overlay = new deck.GoogleMapsOverlay({
 layers: [language, border, treaty, terrain, Amistad2020, Amistad1940, Amistad1970, elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1908, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980, delta1930, delta1950, delta1960, delta1980, delta2000,fencemap, marineboundary]});
-//layers: [language]});
+//layers: [elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1908, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980]});
 
 /////PANORAMA ICONS////
 var icon2 = {url: "https://storage.googleapis.com/riomap/Index/S5river/Screen%20Shot%202021-12-14%20at%204.25.17%20PM.png",

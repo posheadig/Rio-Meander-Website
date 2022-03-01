@@ -55,9 +55,16 @@ border-spacing: 2px;
 
   .anchor { padding-top: 70px; }
 
+
+  tr:target{color: rgb(0, 0, 0);
+    background: #dadada;
+    
+
+  }
+
   table, th, td {
-    border: 1px solid black;
-   
+    border: 1px solid black; 
+   border-collapse: collapse;
     padding: 5px;
     text-align: left;
     vertical-align: top;
