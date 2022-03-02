@@ -255,10 +255,24 @@ border-width: 2px;
     border-style: none;
     border-width: 2px;
     margin: auto;
-    
-   
     top: 23%;
          }}
+         @media screen and (max-width: 800px) {
+          #introespanol {
+      width: 90vw;
+      height: 5vw;
+      font-family:Arial;
+      font-size: 12px;
+      text-align:center;
+      padding-left: 1%;
+      padding-right: 1%;
+      padding-bottom: 0%;
+      position: relative;
+      border-style: none;
+      border-width: 2px;
+      margin: auto;
+      top: 23%;
+           }}
        @media screen and (max-width: 800px) {
   #preface {
     width: 90vw;
@@ -278,6 +292,25 @@ border-width: 2px;
     right: 0%;
     top: 28%;
         }}
+        @media screen and (max-width: 800px) {
+          #prefaceespanol {
+            width: 90vw;
+            height: 15vw;
+            font-family:Arial;
+            font-size: 12px;
+            text-align:center;
+            padding-left: 1%;
+            padding-right: 1%;
+            padding-bottom:0%;
+            position: relative;
+            border-style: none;
+            border-color: rgb(250, 201, 95);
+            border-width: 2px;
+            margin-left: 1%;
+            margin-top: 1%;
+            right: 0%;
+            top: 28%;
+                }}
       
        @media screen and (max-width: 800px) {
       #markers {
