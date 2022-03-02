@@ -50,6 +50,7 @@ text-align:center;
 padding-left: 2%;
 padding-right: 2%;
 margin-top: 1%;
+margin:auto;
 position: absolute;
 border-style: solid;
 border-width: 2px;
@@ -209,12 +210,13 @@ border-width: 2px;
       @media screen and (max-width: 800px) {
         
     #container{
-      width: 100vw;
+      width: 90vw;
       height: 90vw;
       position: relative;
       top: 50%;
       right: 0;
       bottom: 0;
+      margin:auto;
       left: 0;
       margin: auto;
       background-color: #DDD;
@@ -301,7 +303,7 @@ border-width: 2px;
       @media screen and (max-width: 800px) {
          #street-view {
         height: 62vw;
-        width: 100vw;
+        width: 90vw;
         top: 157%;
         position: absolute;
         margin: auto;
