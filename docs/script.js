@@ -1147,7 +1147,7 @@ var icon = {url: 'https://storage.googleapis.com/riomap/Index/S5river/Speaker_Ic
 
 
 /////INFOWINDOW MAIN////
-var infowindow = new google.maps.InfoWindow({ maxWidth: 350, disableAutoPan: true });
+var infowindow = new google.maps.InfoWindow({ maxWidth: "350vw", disableAutoPan: true });
 
 //////ARRAY MARKER LINK MAGIC////
 for (var i = 0; i < locations.length; i++) {
