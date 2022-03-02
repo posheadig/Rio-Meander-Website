@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width"; initial-scale="1.0" /><link rel="stylesheet" href="./style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/deck.gl@^8.7.0-alpha.2/dist.min.js"></script>
+  <script src="https://unpkg.com/three@0.129.0/build/three.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1DI-P2Ymglwb1ey5dVIXsmXhIxReUHmE&callback=initMap&v=beta&channel=2"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  
+
+</head>
+
+<body>
+<div id=title> <h1>  Rio Serpenteante  </h1></div>
+ <div id=introespanol> <p> Las historias a continuación están vinculadas a lugares en el mapa. Haga clic en el enlace del formulario de envío para contribuir con sus propios medios. <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnQRZaIPNLgXpHk5sidPDytefydpOlAfk-hbR8zhfoFP_cFw/viewform?usp=sf_link" target="_blank">Formato de solicitud</a></p></div>
+ <div id=prefaceespanol> <p> Este es un lugar para observar parte de la historia serpenteante del río Grande/Río Bravo durante los últimos 250 años. También es un lugar para encontrar historias de colaboradores y una oportunidad de compartir tu propia historia. Al hacer clic en partes del mapa, accederá a más información. Este proyecto aún está en desarrollo, y si desea ayudar, la información se encuentra a continuación.</p><br>+ Haga clic en cualquiera de los elementos del mapa para conjuntos de <a style = "color: red" href="Data_directory.html" target="_blank" title="Data directory">datos y fuentes de informacion</a><br><a>+ Presione Shift y desplácese hacia adelante o hacia atrás para inclinar la vista hacia arriba o hacia abajo</a></div>
+ 
+<div id="container"></div>
+<div id="tooltip"></div>
+<div id="markers"></div>
+<div id="street-view"></div>
+<div id="information"> <h1> MEANDROS</h1><p> Este proyecto comenzó con <a href="https://landarts.org/" target="_blank">Land Arts of the American West</a> en el 2020. En colaboración con la Universidad de Texas Tech y un grupo de eruditos, académicos, artistas, poetas y arquitectos independientes, se creó el primer mapa de meandros del Rio Grande/Río Bravo. </p> <br>Para obtener más información sobre el proceso de la creación de los meandros y una lista completa de los colaboradores del proyecto, consulte el ensayo de Chris Taylor titulado, <a href="https://ar.fa.uni-lj.si/2020/drawing-time-making-the-rio-meander-map" target="_blank">Drawing Time: Making the Rio Meander Map</a>.</p><br> Este video muestra una breve explicación del proceso que se llevó a cabo para crear el mapa de meandros del Rio Grande/Rio Bravo. <br><br><br> <iframe src="https://player.vimeo.com/video/680843922?h=1c843803a7" width="640" height="383" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></p><h2><br><br><br>Para utilizar los datos del proyecto, consulte la <br><a style = "color: red"; href="Data_directory.html" target="_blank" title="Data directory">página de fuentes y descargas de conjuntos de datos</a></h2><br><br><br><br><br><br></div>
+
+<div id="information2"><h1> HISTORIAS </h1><p> La mejor manera de interactuar con el mapa es haciendo clic en una de las historias en el lado izquierdo de la página, o en uno de los botones de ubicación en la esquina superior derecha del mapa. El texto emergente, mientras mantiene el mouse sobre ciertas áreas, le dice de qué año es el río, qué estructura hay allí (valla fronteriza) o qué tierra/idioma indígena es nativo de esa área (gracias a <a href="https://native-land.ca/" target="_blank">native-land.ca</a>) </p><p>Los datos del proyecto serpenteante se obtuvieron en gran parte de encuestas y mapas que están indudablemente vinculados a las historias coloniales. Una base de datos de todos los archivos digitalizados y la información que se recopiló y sintetizó a partir del proyecto Meander está en camino de publicarse en una subpágina de este proyecto, para acceso abierto.<br> <br>Yo (Patrick O'Shea) y José Villanueva hemos comenzado este proyecto de vida digital del meandro, con el objetivo de expandir las historias que residen en la tierra y el agua más allá de los datos que ya existen. Es por eso que esperamos que otros contribuyan con sus historias e investigaciones a esta página. El enlace para contribuir se encuentra en la esquina superior izquierda de esta página. La presentación no solicita ninguna información personal, y no la requiere, debido a la importancia del cuidado de la privacidad de los demás.<br> <br> Todo esto todavía está en desarrollo, y si tiene algún interés en ayudar con el proyecto, ya sea a través de la investigación, editorial, técnica o administrativa, háganoslo saber en el<a href="https://docs.google.com/forms/d/e/1FAIpQLSfnQRZaIPNLgXpHk5sidPDytefydpOlAfk-hbR8zhfoFP_cFw/viewform?usp=sf_link" target="_blank">formulario de envío</a>.  </p> <p>Este proyecto utiliza la integración entre QGIS, Google Earth Engine, Deck.GL y Google Maps JavaScript api; la página de GitHub se puede encontrar <a href="https://github.com/posheadig/Rio-Meander-Website" target="_blank">aquí.</a> </p></div>
+
+
+</body>
+
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1DI-P2Ymglwb1ey5dVIXsmXhIxReUHmE&callback=initMap&v=beta&channel=2"></script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -58,7 +58,7 @@ border-spacing: 2px;
 
   tr:target{color: rgb(0, 0, 0);
     background: #dadada;
-    
+
 
   }
 
@@ -71,4 +71,8 @@ border-spacing: 2px;
     font-family: helvetica;
   }
 
-  
+  tbody:target{color: rgb(0, 0, 0);
+    background: #dadada;
+
+
+  }

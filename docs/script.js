@@ -386,7 +386,7 @@ const Amistad1940 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Feely_108056_1941_62500_geo')
       }
     });
 const Amistad2020 =   new deck.GeoJsonLayer({
@@ -835,6 +835,39 @@ const elpaso1980 = new deck.GeoJsonLayer({
 //FALCON
 
     ///S5
+    const delta1910 = new deck.GeoJsonLayer({
+      id: 'S51910',
+      data:'https://storage.googleapis.com/riomap/Index/S5river/1910s.geojson',
+      extruded: true,
+      getElevation: 10,
+      filled: true,
+      pointRadiusMinPixels: 5,
+      pointBillboard: true,
+      opacity: .5,  
+      pointRadiusScale: 50,
+      getText: f => f.properties.PaperSpace,
+      getTextSize: 10,
+      getRadius: 5,
+      getFillColor: [0, 153, 255],
+      pointType: 'circle+text',
+      pickable: true,
+      autoHighlight: true,
+      onHover: ({ object, x, y }) => {
+        const info = document.getElementById('tooltip');
+        if (object) {
+          const { properties: { layer } } = object;
+          info.innerHTML = `<h1> ${layer} </h1>`;
+          info.style.display = 'block';
+          info.style.opacity = 0.5;
+          info.style.left = x + 'px';
+          info.style.top = y + 'px';
+        } else {
+          info.style.opacity = 0.0;}
+      },
+      onClick: ({ object, x, y }) => {
+        window.open('Data_directory.html#TX_SanJuan_128360_1914_48000_geo_tif')
+      }
+    });
 const delta1930 = new deck.GeoJsonLayer({
       id: 'S51930',
       data:'https://storage.googleapis.com/riomap/Index/S5river/1930s.geojson',
@@ -865,7 +898,7 @@ const delta1930 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_La Paloma_128247_1929_24000_geo')
       }
     });
 const delta1950 = new deck.GeoJsonLayer({
@@ -898,7 +931,7 @@ const delta1950 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_McAllen_707467_1954_250000_geo')
       }
     });
 const delta1960 = new deck.GeoJsonLayer({
@@ -931,7 +964,7 @@ const delta1960 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Las Milpas_110314_1962_24000_geo')
       }
     });
 const delta1980 = new deck.GeoJsonLayer({
@@ -964,7 +997,7 @@ const delta1980 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_East Brownsville_122284_1983_24000_geo')
       }
     });
 const delta2000 = new deck.GeoJsonLayer({
@@ -997,7 +1030,7 @@ const delta2000 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Hidalgo_117835_2002_24000_geo')
       }
     });
 ///APIs
@@ -1100,8 +1133,8 @@ const marineboundary = new deck.GeoJsonLayer({
 
 
 const overlay = new deck.GoogleMapsOverlay({
-layers: [language, border, treaty, terrain, Amistad2020, Amistad1940, Amistad1970, elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1908, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980, delta1930, delta1950, delta1960, delta1980, delta2000,fencemap, marineboundary]});
-//layers: [elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1908, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980]});
+layers: [language, border, treaty, terrain, Amistad2020, Amistad1940, Amistad1970, elpaso1852, elpaso1889, elpaso1890, elpaso1899, elpaso1907, elpaso1908, elpaso1910, elpaso1930, elpaso1940, elpaso1950, elpaso1970, elpaso1980, delta1910, delta1930, delta1950, delta1960, delta1980, delta2000,fencemap, marineboundary]});
+//layers: [ delta1910, delta1930, delta1950, delta1960, delta1980, delta2000]});
 
 /////PANORAMA ICONS////
 var icon2 = {url: "https://storage.googleapis.com/riomap/Index/S5river/Screen%20Shot%202021-12-14%20at%204.25.17%20PM.png",
