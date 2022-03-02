@@ -352,7 +352,7 @@ const Amistad1970 = new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Amistad Dam_105672_1972_24000_geo')
       }
     });
 const Amistad1940 = new deck.GeoJsonLayer({
@@ -420,7 +420,7 @@ const Amistad2020 =   new deck.GeoJsonLayer({
           info.style.opacity = 0.0;}
       },
       onClick: ({ object, x, y }) => {
-        window.open('Data_directory.html#')
+        window.open('Data_directory.html#TX_Shafter Canyon_124039_1983_24000_geo')
       }
     });
 ///S1

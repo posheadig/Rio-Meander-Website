@@ -51,6 +51,8 @@ border-spacing: 2px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     text-align: center;
+    height:100vw;
+    width:100vw;
   }
 
   .anchor { padding-top: 70px; }
