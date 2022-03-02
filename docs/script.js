@@ -167,13 +167,13 @@ var markers = new Array();
 var locations = [
 [new google.maps.LatLng(21.936574766630688, -100.04679402371038), '<a style="color:red">STORIES</a><br>' , ''],
 //Jose map 
-[new google.maps.LatLng(21.936574766630688, -100.04679402371038), '<br><li style="color:black">Jose Villanueva #1</li>', '<audio controls autoplay>' +
+[new google.maps.LatLng(21.936574766630688, -100.04679402371038), '<br><li style="color:black">Jose Villanueva #1</li>', '<audio controls>' +
     '<source src="https://storage.googleapis.com/riomap/Stories%20Audio/Jose_Villanueva_Part%201.m4a" type="audio/mp3">' +
     '</audio>' + '<p style="color:grey;font-family:georgia;color:rgb(0, 0, 0);font-size:150%"> Written and spoke by Jose Villanueva. </p>' + '<p style="color:grey;font-family:georgia;"> In the street view below, the beginning of the story is seen.</p>'],
-  [new google.maps.LatLng(25.8790294, -97.4813291), '<li style="color:black">Jose Villanueva #2</li>', '<audio controls autoplay>' +
+  [new google.maps.LatLng(25.8790294, -97.4813291), '<li style="color:black">Jose Villanueva #2</li>', '<audio controls >' +
     '<source src="https://storage.googleapis.com/riomap/Stories%20Audio/Jose_Villanueva_Part%202.m4a" type="audio/mp3">' +
     '</audio>' + '<p> This is one of Jose Villanuevas stories. In street view, the beginning of the story is seen.</p>'],
-  [new google.maps.LatLng(32.759244, -96.864269), '<li style="color:black">Jose Villanueva #3</li>', '<audio controls autoplay>' +
+  [new google.maps.LatLng(32.759244, -96.864269), '<li style="color:black">Jose Villanueva #3</li>', '<audio controls>' +
     '<source src="https://storage.googleapis.com/riomap/Stories%20Audio/Jose_Villanueva_Part%203.m4a" type="audio/mp3">' +
     '</audio>' + '<p> This is one of Jose Villanuevas stories. In street view, the beginning of the story is seen.</p>'],
     [new google.maps.LatLng(31.7474093, -106.4890997), '<li style="color:black">sergio adrián hernández güereca</li>', '']
