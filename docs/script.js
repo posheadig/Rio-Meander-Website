@@ -67,10 +67,10 @@ function CenterControl2(controlDiv, map) {
   controlUI.appendChild(controlText);
   // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", () => {
-    map.setCenter({lat: 31.6313169, lng: -106.3459812});
-  map.setZoom(11.30);
-  map.setHeading(323.07);
-  map.setTilt(60);
+    map.setCenter({lat: 31.7501169, lng: -106.48412});
+  map.setZoom(12);
+  map.setHeading(55.57);
+  map.setTilt(65);
   });
 }
 function CenterControl3(controlDiv, map) {
@@ -175,10 +175,10 @@ var locations = [
 
 /////MAP///
 const map = new google.maps.Map(document.getElementById('container'), {
-  center: { lat: 31.2354325, lng: -103.3310181 },
-  zoom: 5,
+  center: { lat: 31.7591976, lng: -106.4305317 },
+  zoom: 15,
   tilt: 70,
-  heading: 112.55,
+  heading: 105.75,
   gestureHandling: 'greedy',
   mapId: "1014eb8ffcc7cc09"});
 
@@ -186,9 +186,11 @@ const map = new google.maps.Map(document.getElementById('container'), {
 
 const panorama = new google.maps.StreetViewPanorama(
   document.getElementById("street-view"),
-  { position: { lat: 25.8790294, lng: -97.4813291 },
-    pov: { heading: 37.04, pitch: 25 },
+  { position: { lat: 31.7567014, lng: -106.4290472 },
+    pov: { heading: 60.04, pitch: 25 },
     zoom: 0,
+   
+   
     enableCloseButton: false});
 
 map.setStreetView(panorama);
