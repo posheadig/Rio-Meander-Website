@@ -1,6 +1,6 @@
 let map, panorama, overlay, centerControlDiv;
 
-function controls(){
+
     const controls = [
         { backgroundColor: "#f3ba1e", textContent: "Start", center: { lat: 31.7564809, lng: -106.4290277 }, zoom: 15, heading: 105.75, tilt: 70 },
         { backgroundColor: "#FFA100", textContent: "Juarez/ElPaso", center: {lat: 31.7501169, lng: -106.48412}, zoom: 12, heading: 55.57, tilt: 65 },
@@ -30,10 +30,10 @@ function controls(){
 
         centerControlDiv.appendChild(controlUI);
     });
-  }
+
   
 function initMap() {
-  
+
   map = new google.maps.Map(document.getElementById('container'), {
     center: { lat: 31.7564809, lng: -106.4290277 },
     zoom: 15,
