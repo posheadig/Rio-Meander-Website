@@ -335,9 +335,15 @@ function createBaseGeoJsonLayer(options) {
     overlay = new deck.GoogleMapsOverlay({ layers });
     overlay.setMap(map);
 
-document.getElementById("languageSwitch").addEventListener("click", function() {
-  var currentLang = document.documentElement.lang;
-  var newLang = (currentLang === "es") ? "en" : "es";
-  window.location.href = "index." + newLang + ".html";
-});
+    document.getElementById("languageSwitch").addEventListener("click", function() {
+      var currentLang = document.documentElement.lang;
+    
+      // Determine the new language and appropriate file based on the current language
+      var newLang = (currentLang === "es") ? "en" : "es";
+      var newFile = newLang === "en" ? "index.html" : "index.es.html";
+      
+      // Redirect to the new file
+      window.location.href = newFile;
+    });
+    
 
