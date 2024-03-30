@@ -25,7 +25,9 @@ panorama = new google.maps.StreetViewPanorama(
 map.setStreetView(panorama);
 
 
-
+google.maps.event.addListenerOnce(map, 'idle', function(){
+  // This code will run after the map has finished loading
+  console.log("Map is ready!");
 
     const controls = [
         { backgroundColor: "#f3ba1e", textContent: "Start", center: { lat: 31.7564809, lng: -106.4290277 }, zoom: 15, heading: 105.75, tilt: 70 },
@@ -340,10 +342,11 @@ function createBaseGeoJsonLayer(options) {
     
       // Determine the new language and appropriate file based on the current language
       var newLang = (currentLang === "es") ? "en" : "es";
-      var newFile = newLang === "en" ? "index.html" : "index.es.html";
+      var newFile = newLang === "en" ? "index.html" : "indexespanol.html";
       
       // Redirect to the new file
       window.location.href = newFile;
     });
     
 
+  });
