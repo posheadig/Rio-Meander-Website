@@ -342,7 +342,7 @@ function createBaseGeoJsonLayer(options) {
     
       // Determine the new language and appropriate file based on the current language
       var newLang = (currentLang === "es") ? "en" : "es";
-      var newFile = newLang === "en" ? "index.html" : "indexespanol.html";
+      var newFile = newLang === "en" ? "index.html" : "espanol.html";
       
       // Redirect to the new file
       window.location.href = newFile;
