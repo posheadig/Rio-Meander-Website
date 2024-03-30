@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta name="viewport" content="width=device-width"; initial-scale=1.0 /><link rel="stylesheet" href="./style.css">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://unpkg.com/deck.gl@^8.7.0-alpha.2/dist.min.js"></script>
+        <script src="https://unpkg.com/three@0.129.0/build/three.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ-SqBjkeptXKFVPHijLRfRSbc__Lupk&v=beta&channel=2"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        
+        <title>Meandros del Común del Río</title>
+    </head>
+    <body>
+    
+        <header>
+            <div class="header-content">
+                <h1>Meandros del Común del Río</h1>
+                <p>Este es un lugar para observar la historia serpenteante del río Grande / Río Bravo durante los últimos 200 años.<br> Haz clic en cualquiera de las historias a continuación para ver datos, historias y poesía contribuidos por el público.<br> Todos los archivos GIS y datos son de código abierto y acceso libre para su uso gratuito.</p>
+            </div>
+            <div class="header-controls">
+                <button id="languageSwitch">English</button>
+                <a href="https://github.com/posheadig/Rio-Meander-Website" target="_blank" id="githubLink" aria-label="GitHub">
+                    <img src="./thumbnails/giticon.png" alt="GitHub">
+                </a>
+            </div>
+        </header>
+    <main>
+        <section id="markerList">
+            <h2>Contribuciones Públicas</h2>
+            <ul id="markers"></ul> <!-- Aquí se poblará la lista de marcadores -->
+          </section>
+          
+        <section id="map">
+            <div id="container"></div>
+            <div id="tooltip"></div>
+            <aside id="street-view"></aside>
+        </section>
+        <section id="information">
+            <h2>Meandros</h2>
+            <p> Este proyecto comenzó con <a href="https://landarts.org/" target="_blank">Land Arts of the American West</a> en 2020. En colaboración con Land Arts of the American West y un grupo de académicos independientes, artistas, poetas y arquitectos, se creó el mapa de meandros del río Grande / Río Bravo. </p> <br>Para aprender sobre el proceso de creación de los meandros, y para ver una lista completa de los contribuyentes al proyecto, vea el ensayo de Chris Taylor titulado, <a href="https://ar.fa.uni-lj.si/2020/drawing-time-making-the-rio-meander-map" target="_blank">Dibujando el Tiempo: Creando el Mapa de Meandros del Río</a>.</p><br> Este corto video muestra una breve explicación del proceso que se llevó a cabo para crear el mapa de meandros del río Grande/Bravo. <br><br><br> <iframe src="https://player.vimeo.com/video/680843922?h=1c843803a7" frameborder="0" allow="autoplay"></iframe></p><h2>Para usar los datos del proyecto, consulta la <br><a style = "color: red"; href="Data_directory.html" target="_blank" title="Directorio de datos">página de descargas de datos y fuentes</a></h2><br></div>
+        </section>
+        <section id="stories">
+            <h2>Historias</h2>
+            <p> Interactuar con el mapa se hace mejor haciendo clic en una de las historias en la página, o uno de los botones de ubicación en la esquina superior derecha del mapa. El texto emergente, mientras mantienes el ratón sobre ciertas áreas, te dice de qué año es el río, qué estructura hay (valla fronteriza), o qué tierra/idioma indígena es nativo de esa área (gracias a <a href="https://native-land.ca/" target="_blank">native-land.ca</a>) </p><p>Los datos del proyecto de meandros se obtuvieron en gran medida de encuestas y mapas que están indiscutiblemente vinculados a historias coloniales. Una base de datos de todos los archivos y la información digitalizada que se recopiló y sintetizó del proyecto Meander es de acceso libre y gratuito.<br> <br> Patrick O'Shea y Jose Villaneuva han comenzado un proyecto digital, con el objetivo de expandir las historias que residen en la tierra y el agua más allá de los datos que ya existen. 
+                Por eso esperamos que otros contribuyan con sus historias e investigaciones a esta página. <br>  </p></div>
+        </section>
+    </main>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+
+</body>
+</html>
