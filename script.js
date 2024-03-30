@@ -1,34 +1,6 @@
-let map, panorama, overlay;
+let map, panorama, overlay, centerControlDiv;
 
-map = new google.maps.Map(document.getElementById('container'), {
-  center: { lat: 31.7564809, lng: -106.4290277 },
-  zoom: 15,
-  tilt: 70,
-  heading: 105.75,
-  gestureHandling: 'greedy',
-  mapId: "1014eb8ffcc7cc09",
-  mapTypeControlOptions: {
-      mapTypeIds: ['satellite']
-  }
-});
-
-map.setMapTypeId('satellite');
-
-panorama = new google.maps.StreetViewPanorama(
-    document.getElementById("street-view"), {
-        position: { lat: 31.7567014, lng: -106.4290472 },
-        pov: { heading: 186.17, pitch: 25 },
-        zoom: 0,
-        enableCloseButton: false
-});
-
-map.setStreetView(panorama);
-
-
-google.maps.event.addListenerOnce(map, 'idle', function(){
-  // This code will run after the map has finished loading
-  console.log("Map is ready!");
-
+function controls(){
     const controls = [
         { backgroundColor: "#f3ba1e", textContent: "Start", center: { lat: 31.7564809, lng: -106.4290277 }, zoom: 15, heading: 105.75, tilt: 70 },
         { backgroundColor: "#FFA100", textContent: "Juarez/ElPaso", center: {lat: 31.7501169, lng: -106.48412}, zoom: 12, heading: 55.57, tilt: 65 },
@@ -36,7 +8,7 @@ google.maps.event.addListenerOnce(map, 'idle', function(){
         { backgroundColor: "#fe911c", textContent: "Delta", center: {lat: 25.8820551, lng: -97.3415640}, zoom: 11.5, heading: 350.3, tilt: 47.5 }
     ];
   
-    const centerControlDiv = document.createElement("div");
+    centerControlDiv = document.createElement("div");
     controls.forEach(({backgroundColor, textContent, center, zoom, heading, tilt}) => {
       const controlUI = document.createElement("div");
       controlUI.classList.add("control-ui");
@@ -58,9 +30,38 @@ google.maps.event.addListenerOnce(map, 'idle', function(){
 
         centerControlDiv.appendChild(controlUI);
     });
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
+  }
+  
+function initMap() {
+  
+  map = new google.maps.Map(document.getElementById('container'), {
+    center: { lat: 31.7564809, lng: -106.4290277 },
+    zoom: 15,
+    tilt: 70,
+    heading: 105.75,
+    gestureHandling: 'greedy',
+    mapId: "1014eb8ffcc7cc09",
+    mapTypeControlOptions: {
+        mapTypeIds: ['satellite']
+    }
+});
+
+map.setMapTypeId('satellite');
+  
 
 
+panorama = new google.maps.StreetViewPanorama(
+    document.getElementById("street-view"), {
+        position: { lat: 31.7567014, lng: -106.4290472 },
+        pov: { heading: 186.17, pitch: 25 },
+        zoom: 0,
+        enableCloseButton: false
+    }
+);
+
+map.setStreetView(panorama);
+map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
+  
 
     window.setTooltip = ({ x, y, object }) => {
         const tooltip = document.getElementById('tooltip');
@@ -76,7 +77,7 @@ google.maps.event.addListenerOnce(map, 'idle', function(){
 
     const infowindow = new google.maps.InfoWindow({ maxWidth: "350vw", disableAutoPan: true });
     const markersArray = [];
-
+  
     // Icons
     const icons = {
         speaker: { url: './map_markers/Speaker_Icon.svg.png', scaledSize: new google.maps.Size(20, 20) },
@@ -336,6 +337,7 @@ function createBaseGeoJsonLayer(options) {
     ];
     overlay = new deck.GoogleMapsOverlay({ layers });
     overlay.setMap(map);
+  
 
     document.getElementById("languageSwitch").addEventListener("click", function() {
       var currentLang = document.documentElement.lang;
@@ -347,6 +349,4 @@ function createBaseGeoJsonLayer(options) {
       // Redirect to the new file
       window.location.href = newFile;
     });
-    
-
-  });
+  }
