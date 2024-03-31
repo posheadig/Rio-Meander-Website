@@ -31,7 +31,14 @@ let map, panorama, overlay, centerControlDiv;
         centerControlDiv.appendChild(controlUI);
     });
 
-  
+  function loadGoogleMapsAPI() {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${config.GOOGLE_MAPS_API_KEY}&callback=initMap`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+}
+loadGoogleMapsAPI();
 function initMap() {
 
   map = new google.maps.Map(document.getElementById('container'), {
